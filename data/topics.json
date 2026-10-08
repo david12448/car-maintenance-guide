@@ -1,0 +1,79 @@
+[
+  {
+    "id": "wiper",
+    "name": "와이퍼",
+    "category": "소모품",
+    "safety": "직접 관리 범위",
+    "detailPolicy": "basic"
+  },
+  {
+    "id": "cabin-filter",
+    "name": "캐빈/에어컨 필터",
+    "category": "소모품",
+    "safety": "직접 관리 범위",
+    "detailPolicy": "basic"
+  },
+  {
+    "id": "engine-air-filter",
+    "name": "엔진 에어필터",
+    "category": "소모품",
+    "safety": "직접 관리 범위",
+    "detailPolicy": "basic"
+  },
+  {
+    "id": "exterior-bulb",
+    "name": "일반 외부 전구",
+    "category": "전기·조명",
+    "safety": "직접 관리 범위",
+    "detailPolicy": "basic"
+  },
+  {
+    "id": "engine-oil",
+    "name": "엔진오일·필터",
+    "category": "소모품",
+    "safety": "정비소/장비 권장",
+    "detailPolicy": "overview"
+  },
+  {
+    "id": "coolant",
+    "name": "냉각수",
+    "category": "엔진·냉각",
+    "safety": "정비소/장비 권장",
+    "detailPolicy": "overview"
+  },
+  {
+    "id": "differential-fluid",
+    "name": "디퍼렌셜 오일",
+    "category": "하체·구동",
+    "safety": "정비소/장비 권장",
+    "detailPolicy": "overview"
+  },
+  {
+    "id": "transmission-fluid",
+    "name": "미션오일",
+    "category": "변속기",
+    "safety": "전문 정비 권장",
+    "detailPolicy": "professional"
+  },
+  {
+    "id": "brake-system",
+    "name": "브레이크 계통",
+    "category": "하체·제동",
+    "safety": "전문 정비 권장",
+    "detailPolicy": "professional"
+  },
+  {
+    "id": "airbag",
+    "name": "에어백/SRS",
+    "category": "전기·안전",
+    "safety": "전문 정비 권장",
+    "detailPolicy": "professional"
+  },
+  {
+    "id": "high-voltage",
+    "name": "고전압 계통",
+    "category": "전기·안전",
+    "safety": "전문 정비 권장",
+    "detailPolicy": "professional"
+  }
+]

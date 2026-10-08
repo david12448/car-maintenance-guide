@@ -1,0 +1,149 @@
+[
+  {
+    "id": "hyundai-sonata-nf",
+    "origin": "국산차",
+    "maker": "현대",
+    "model": "쏘나타",
+    "generation": "NF",
+    "platform": "NF",
+    "yearFrom": 2004,
+    "yearTo": 2009,
+    "aliases": [
+      "NF 쏘나타",
+      "소나타 NF"
+    ],
+    "status": "수집 예정"
+  },
+  {
+    "id": "hyundai-sonata-yf",
+    "origin": "국산차",
+    "maker": "현대",
+    "model": "쏘나타",
+    "generation": "YF",
+    "platform": "YF",
+    "yearFrom": 2009,
+    "yearTo": 2014,
+    "aliases": [
+      "YF 쏘나타"
+    ],
+    "status": "수집 예정"
+  },
+  {
+    "id": "hyundai-grandeur-tg",
+    "origin": "국산차",
+    "maker": "현대",
+    "model": "그랜저",
+    "generation": "TG",
+    "platform": "TG",
+    "yearFrom": 2005,
+    "yearTo": 2011,
+    "aliases": [
+      "그랜저 TG"
+    ],
+    "status": "수집 예정"
+  },
+  {
+    "id": "hyundai-avante-md",
+    "origin": "국산차",
+    "maker": "현대",
+    "model": "아반떼",
+    "generation": "MD",
+    "platform": "MD",
+    "yearFrom": 2010,
+    "yearTo": 2015,
+    "aliases": [
+      "아반떼 MD"
+    ],
+    "status": "수집 예정"
+  },
+  {
+    "id": "hyundai-santafe-cm",
+    "origin": "국산차",
+    "maker": "현대",
+    "model": "싼타페",
+    "generation": "CM",
+    "platform": "CM",
+    "yearFrom": 2005,
+    "yearTo": 2012,
+    "aliases": [
+      "싼타페 CM"
+    ],
+    "status": "수집 예정"
+  },
+  {
+    "id": "kia-k5-tf",
+    "origin": "국산차",
+    "maker": "기아",
+    "model": "K5",
+    "generation": "1세대",
+    "platform": "TF",
+    "yearFrom": 2010,
+    "yearTo": 2015,
+    "aliases": [
+      "K5 TF",
+      "1세대 K5"
+    ],
+    "status": "수집 예정"
+  },
+  {
+    "id": "kia-sportage-sl",
+    "origin": "국산차",
+    "maker": "기아",
+    "model": "스포티지",
+    "generation": "스포티지 R",
+    "platform": "SL",
+    "yearFrom": 2010,
+    "yearTo": 2015,
+    "aliases": [
+      "스포티지 R",
+      "스포티지R"
+    ],
+    "status": "수집 예정"
+  },
+  {
+    "id": "mercedes-eclass-w212",
+    "origin": "수입차",
+    "maker": "Mercedes-Benz",
+    "model": "E-Class",
+    "generation": "W212",
+    "platform": "W212",
+    "yearFrom": 2009,
+    "yearTo": 2016,
+    "aliases": [
+      "벤츠 E클래스 W212",
+      "W212",
+      "E200 CGI"
+    ],
+    "status": "우선 수집"
+  },
+  {
+    "id": "bmw-3series-e90",
+    "origin": "수입차",
+    "maker": "BMW",
+    "model": "3 Series",
+    "generation": "E90/E91/E92/E93",
+    "platform": "E9x",
+    "yearFrom": 2005,
+    "yearTo": 2013,
+    "aliases": [
+      "BMW E90",
+      "3시리즈 E90"
+    ],
+    "status": "수집 예정"
+  },
+  {
+    "id": "bmw-5series-f10",
+    "origin": "수입차",
+    "maker": "BMW",
+    "model": "5 Series",
+    "generation": "F10/F11",
+    "platform": "F10",
+    "yearFrom": 2010,
+    "yearTo": 2017,
+    "aliases": [
+      "BMW F10",
+      "5시리즈 F10"
+    ],
+    "status": "수집 예정"
+  }
+]
