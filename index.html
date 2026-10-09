@@ -21,7 +21,33 @@
   </header>
 
   <main class="wrap">
-    <section class="toolbar" aria-label="차량 필터">
+    <section class="service-section" aria-labelledby="serviceTitle">
+      <div class="section-head">
+        <div><p class="eyebrow">CAR LIFE</p><h2 id="serviceTitle">자동차 생활 카테고리</h2></div>
+      </div>
+      <div class="service-grid">
+        <a class="service-card is-current" href="#vehicleCatalog">
+          <span class="service-kicker">MAINTENANCE</span>
+          <h3>정비·리콜</h3>
+          <p>연식·엔진·변속기를 구분한 정비정보와 공식 리콜을 확인합니다.</p>
+          <span class="service-action">차량 찾기 →</span>
+        </a>
+        <a class="service-card" href="./fuel/">
+          <span class="service-kicker">FUEL</span>
+          <h3>주유소·유가</h3>
+          <p>지역별 주유소 위치·가격·운영정보와 주유 할인카드를 연결합니다.</p>
+          <span class="service-action">주유 정보 보기 →</span>
+        </a>
+        <a class="service-card" href="./purchase/">
+          <span class="service-kicker">BUY & FINANCE</span>
+          <h3>차량 구매</h3>
+          <p>신차·중고차 정보와 카드 할부·자동차대출·등록비용을 함께 비교합니다.</p>
+          <span class="service-action">구매 정보 보기 →</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="vehicleCatalog" class="toolbar" aria-label="차량 필터">
       <div class="tabs" id="originTabs">
         <button class="tab is-active" data-origin="">전체</button>
         <button class="tab" data-origin="국산차">국산차</button>

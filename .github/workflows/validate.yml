@@ -25,3 +25,5 @@ jobs:
           test -f vehicles/hyundai-santafe-cm/index.html
           test -f vehicles/kia-k5-tf/index.html
           test -f vehicles/bmw-3series-e90/index.html
+          test -f fuel/index.html
+          test -f purchase/index.html
