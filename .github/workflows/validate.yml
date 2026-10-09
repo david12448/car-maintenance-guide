@@ -21,6 +21,17 @@ jobs:
           node --check purchase/purchase.js
       - name: Build static vehicle pages
         run: python scripts/build_vehicle_pages.py
+      - name: Validate portable URL routes
+        run: python scripts/check_url_routes.py
+      - name: Local HTTP direct-link smoke
+        run: |
+          python -m http.server 8766 --bind 127.0.0.1 >/tmp/auto-pretty-urls.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          sleep 1
+          curl -fsS http://127.0.0.1:8766/vehicles/hyundai-avante-md/ | grep -q '아반떼'
+          curl -fsS http://127.0.0.1:8766/vehicles/mercedes-eclass-w212/ | grep -q 'E-Class'
+          curl -fsS 'http://127.0.0.1:8766/vehicle.html?id=hyundai-avante-md' >/dev/null
       - name: Verify generated pages
         run: |
           test -f vehicles/mercedes-eclass-w212/index.html
