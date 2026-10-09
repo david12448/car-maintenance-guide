@@ -21,6 +21,16 @@ jobs:
           node --check purchase/purchase.js
       - name: Build static vehicle pages
         run: python scripts/build_vehicle_pages.py
+      - name: Unit test canonical and sitemap generator
+        run: python -m unittest discover -s tests -p 'test_site_metadata.py'
+      - name: Build SEO metadata for current deployment base
+        env:
+          SITE_URL: ${{ vars.PUBLIC_SITE_URL || format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}
+        run: python scripts/build_site_metadata.py
+      - name: Verify SEO artifacts
+        run: |
+          test -f sitemap.xml
+          grep -q 'rel="canonical"' vehicles/hyundai-sonata-nf/index.html
       - name: Verify generated pages
         run: |
           test -f vehicles/mercedes-eclass-w212/index.html
