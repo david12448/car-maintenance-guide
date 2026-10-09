@@ -8,6 +8,16 @@ function safetyClass(v){
   if(v==="정비소/장비 권장")return "safety-shop";
   return "safety-owner";
 }
+function recallRecords(records){
+  if(!Array.isArray(records)||!records.length)return "";
+  return '<div class="recall-records">'+records.map(r=>`
+    <article class="recall-record">
+      <div class="recall-record-head"><strong>${esc(r.title)}</strong><span>${esc(r.announced)}</span></div>
+      <div class="meta">대상 생산기간 ${esc(r.production)}</div>
+      <p>${esc(r.summary)}</p>
+      <div class="remedy"><strong>조치:</strong> ${esc(r.remedy)}</div>
+    </article>`).join("")+'</div>';
+}
 
 fetch("./data/vehicle-details.json")
   .then(r=>{if(!r.ok)throw new Error("detail load failed");return r.json()})
@@ -29,6 +39,7 @@ fetch("./data/vehicle-details.json")
         <p class="eyebrow">RECALL & SERVICE CAMPAIGN</p>
         <h2>${esc(v.recall.headline)}</h2>
         <p>${esc(v.recall.summary)}</p>
+        ${recallRecords(v.recall.records)}
       </div>
       <div class="recall-side">
         <span class="recall-status">${esc(v.recall.status)}</span>

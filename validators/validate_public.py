@@ -24,9 +24,15 @@ assert len(topic_ids) == len(set(topic_ids)), "duplicate topic id"
 detail_ids = [d["id"] for d in details]
 assert len(detail_ids) == len(set(detail_ids)), "duplicate detail id"
 assert set(detail_ids).issubset(set(ids)), "detail vehicle must exist in vehicles.json"
+
 for d in details:
-    assert d["recall"]["publicSourceRef"]
-    assert "http" not in d["recall"]["publicSourceRef"].lower()
+    recall = d["recall"]
+    assert recall["publicSourceRef"]
+    assert "http" not in recall["publicSourceRef"].lower()
+    for r in recall.get("records", []):
+        assert r["title"]
+        assert r["summary"]
+        assert r["remedy"]
 
 # Public JSON must not expose private collection infrastructure or direct source URLs.
 for path in DATA.glob("*.json"):
