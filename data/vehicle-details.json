@@ -800,5 +800,144 @@
         "videoId": "hoRFpMcjI2Y"
       }
     ]
+  },
+  {
+    "id": "hyundai-sonata-nf",
+    "title": "현대 쏘나타 NF",
+    "focusVariant": "2007 NF 쏘나타 N20 2.0 가솔린 중심",
+    "production": "2004–2009",
+    "verification": "부분 검증",
+    "identityNotice": "현대자동차 공식 헤리티지 자료의 초기 NF 2.0 사양을 기준으로 시작합니다. 2.4 가솔린·디젤·LPG 및 2007년 말 이후 트랜스폼은 부품과 정비 규격이 달라질 수 있어 별도 사양으로 구분합니다.",
+    "specSummary": [
+      "차대/세대: NF",
+      "우선 기준: 2007 N20 2.0 가솔린",
+      "엔진형식: 직렬 4기통 가솔린",
+      "배기량: 1,998cc",
+      "최고출력: 144PS",
+      "변속기: 4단 자동(초기형 공식 제원 기준)"
+    ],
+    "recall": {
+      "status": "후기 생산분 리콜 1건 확인",
+      "headline": "리콜·무상수리 확인",
+      "summary": "현재 확인된 브레이크 스위치 리콜은 2008년 10월 이후 생산된 쏘나타 후기 생산분에 해당합니다. 2007년형 초기 NF를 이 리콜 대상이라고 표시하지 않으며, 실제 차량 대상 여부와 조치 완료 여부는 차량번호 또는 VIN 공식 조회가 최종 기준입니다.",
+      "publicSourceRef": "recall-center",
+      "actionLabel": "공식 차량별 조회 연결 준비 중",
+      "records": [
+        {
+          "title": "브레이크 스위치 접촉 불량 관련 리콜",
+          "announced": "2013-09-25",
+          "production": "2008-10-01 ~ 2011-01-31",
+          "summary": "브레이크 스위치 접촉 불량으로 시동·제동등·정속주행장치·차체자세제어장치에 이상이 발생할 가능성과 관련된 리콜입니다.",
+          "remedy": "대상 차량 확인 후 브레이크 스위치 교환"
+        }
+      ]
+    },
+    "maintenance": [
+      {
+        "name": "와이퍼",
+        "category": "소모품",
+        "safety": "직접 관리 범위",
+        "status": "자료 수집 중",
+        "summary": "연식과 와이퍼 암 사양을 확인해 정확한 규격을 정리합니다."
+      },
+      {
+        "name": "캐빈/에어컨 필터",
+        "category": "소모품",
+        "safety": "직접 관리 범위",
+        "status": "참고 영상 확인",
+        "summary": "2006–2010 5세대 Sonata 참고영상과 현대 공식 매뉴얼을 교차해 적용 정보를 정리합니다."
+      },
+      {
+        "name": "엔진 에어필터",
+        "category": "소모품",
+        "safety": "직접 관리 범위",
+        "status": "엔진별 검증 중",
+        "summary": "북미 2.4L 영상은 구조 참고로만 사용하고 국내 2.0 N20의 실제 필터 규격은 별도로 검증합니다."
+      },
+      {
+        "name": "일반 외부 전구",
+        "category": "전기·조명",
+        "safety": "직접 관리 범위",
+        "status": "사양 구분 필요",
+        "summary": "램프 옵션과 초기형/트랜스폼 차이를 확인한 뒤 적용 정보를 표시합니다."
+      },
+      {
+        "name": "엔진오일·필터",
+        "category": "소모품",
+        "safety": "정비소/장비 권장",
+        "status": "N20 공식 규격 검증 중",
+        "summary": "2.0 가솔린을 우선으로 엔진별 오일 규격과 용량을 공식 자료로 확인합니다."
+      },
+      {
+        "name": "냉각수",
+        "category": "엔진·냉각",
+        "safety": "정비소/장비 권장",
+        "status": "공식 규격 검증 중",
+        "summary": "엔진·연식별 냉각계 사양을 공식 자료 중심으로 확인합니다."
+      },
+      {
+        "name": "미션오일",
+        "category": "변속기",
+        "safety": "전문 정비 권장",
+        "status": "변속기별 검증 중",
+        "summary": "초기형 4단 자동과 후기형 변속기 사양을 구분하고 전문 정비 정보 중심으로 제공합니다."
+      },
+      {
+        "name": "브레이크 계통",
+        "category": "하체·제동",
+        "safety": "전문 정비 권장",
+        "status": "후기 생산분 리콜 이력 연계",
+        "summary": "브레이크 스위치 리콜 대상 생산기간과 일반 제동계 점검 정보를 구분해서 제공합니다."
+      }
+    ],
+    "sourceLabels": [
+      "현대자동차 NF 쏘나타 공식 헤리티지 제원",
+      "현대자동차 공식 사용설명서",
+      "국토교통부·자동차리콜센터",
+      "자동차리콜센터 원자료 기반 보조 인덱스"
+    ],
+    "videoDiscovery": {
+      "status": "국내 영상 추가 수집 중",
+      "sort": "차량 일치도 우선, 이후 조회수·댓글 반응 순",
+      "preferredChannels": [],
+      "groups": [
+        "korea",
+        "overseas"
+      ]
+    },
+    "videos": [
+      {
+        "countryGroup": "overseas",
+        "title": "How to Replace Cabin Air Filter 2006-2010 Hyundai Sonata",
+        "channel": "TRQ",
+        "topic": "캐빈/에어컨 필터",
+        "matchLabel": "NF/5세대 호환",
+        "summary": "2006–2010 Hyundai Sonata의 캐빈필터 참고영상입니다. 파워트레인 영향이 적은 저위험 관리 항목입니다.",
+        "viewCount": 6873,
+        "commentCount": null,
+        "positiveCommentRatio": null,
+        "vehicleMatchScore": 100,
+        "popularityScore": 58,
+        "safetyClass": "owner_simple",
+        "publicLinkPolicy": "direct",
+        "videoId": "irxMpeIeKe8"
+      },
+      {
+        "countryGroup": "overseas",
+        "title": "How to Replace Engine Air Filter 2007 Hyundai Sonata L4 2.4L",
+        "channel": "Filterheads",
+        "topic": "엔진 에어필터",
+        "matchLabel": "2007 NF 계열·2.4L 참고",
+        "summary": "2007 Sonata 2.4L 해외 사양 영상입니다. 국내 2.0 N20과 엔진이 달라 구조 참고로만 사용합니다.",
+        "viewCount": 27544,
+        "commentCount": null,
+        "positiveCommentRatio": null,
+        "vehicleMatchScore": 75,
+        "popularityScore": 72,
+        "safetyClass": "owner_simple",
+        "publicLinkPolicy": "direct",
+        "videoId": "sXhFaMip2LI"
+      }
+    ]
   }
 ]
