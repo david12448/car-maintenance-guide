@@ -1,5 +1,8 @@
 import html
 import json
+import os
+from urllib.parse import urlsplit
+from xml.sax.saxutils import escape as xml_escape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -9,6 +12,18 @@ OUT = ROOT / "vehicles"
 vehicles = json.loads((DATA / "vehicles.json").read_text(encoding="utf-8"))
 details = json.loads((DATA / "vehicle-details.json").read_text(encoding="utf-8"))
 detail_map = {d["id"]: d for d in details}
+
+def site_origin():
+    configured = os.environ.get("SITE_ORIGIN", "").strip()
+    if not configured:
+        return None
+    parts = urlsplit(configured)
+    if (parts.scheme != "https" or not parts.hostname or parts.username or parts.password
+            or parts.query or parts.fragment or (parts.path and not parts.path.endswith("/"))):
+        raise ValueError("SITE_ORIGIN must be a verified absolute HTTPS deployment root ending in /")
+    return configured.rstrip("/") + "/"
+
+ORIGIN = site_origin()
 
 def e(v):
     return html.escape(str(v if v is not None else ""), quote=True)
@@ -212,6 +227,10 @@ OUT.mkdir(exist_ok=True)
 for vehicle in vehicles:
     detail = detail_map.get(vehicle["id"])
     rendered = render_detail(vehicle, detail) if detail else render_pending(vehicle)
+    # Do not index data-poor pending pages; never invent a canonical hostname.
+    robots = '<meta name="robots" content="noindex">' if detail is None else ""
+    canonical = (f'<link rel="canonical" href="{e(ORIGIN + "vehicles/" + vehicle["id"] + "/")}">'
+                 if ORIGIN and detail is not None else "")
     page = f"""<!doctype html>
 <html lang="ko">
 <head>
@@ -219,6 +238,8 @@ for vehicle in vehicles:
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="{e(rendered["title"])} 자동차 정비 및 리콜 가이드">
   <title>{e(rendered["title"])} 정비 가이드</title>
+  {robots}
+  {canonical}
   <link rel="stylesheet" href="../../styles.css?v=20261009c">
 </head>
 <body>
@@ -243,4 +264,17 @@ for vehicle in vehicles:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(page, encoding="utf-8")
 
-print(f"built vehicle pages={len(vehicles)} details={len(details)}")
+
+# Emit a sitemap only after a verified canonical origin is supplied via SITE_ORIGIN.
+sitemap = ROOT / "sitemap.xml"
+if ORIGIN:
+    indexable = [v["id"] for v in vehicles if v["id"] in detail_map]
+    urls = [ORIGIN] + [ORIGIN + "vehicles/" + slug + "/" for slug in indexable]
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    xml += "".join("  <url><loc>" + xml_escape(u) + "</loc></url>\n" for u in urls)
+    xml += "</urlset>\n"
+    sitemap.write_text(xml, encoding="utf-8")
+elif sitemap.exists():
+    raise ValueError("Do not publish an unverified sitemap while domain is undecided")
+
+print(f"built vehicle pages={len(vehicles)} details={len(details)} canonical={bool(ORIGIN)}")
