@@ -1,0 +1,88 @@
+[
+  {
+    "id": "mercedes-eclass-w212",
+    "title": "Mercedes-Benz E-Class W212",
+    "focusVariant": "2011 E200 CGI",
+    "production": "2009–2016",
+    "verification": "부분 검증",
+    "identityNotice": "현재 공개 단계에서는 W212 세대와 2011 E200 CGI를 우선 대상으로 검증 중입니다. 엔진·변속기 코드는 차량별 근거가 정리된 뒤 확정 표시합니다.",
+    "recall": {
+      "status": "공식 조회 필요",
+      "headline": "리콜·무상수리 확인",
+      "summary": "차종 수준 리콜 이력은 수집·검증 중입니다. 실제 차량의 대상 여부와 조치 완료 여부는 차량번호 또는 VIN을 이용한 공식 조회가 최종 기준입니다.",
+      "publicSourceRef": "recall-center",
+      "actionLabel": "공식 차량별 조회 연결 준비 중"
+    },
+    "maintenance": [
+      {
+        "name": "와이퍼",
+        "category": "소모품",
+        "safety": "직접 관리 범위",
+        "status": "자료 수집 중",
+        "summary": "차량별 규격과 장착 사양을 확인해 공개할 예정입니다."
+      },
+      {
+        "name": "캐빈/에어컨 필터",
+        "category": "소모품",
+        "safety": "직접 관리 범위",
+        "status": "자료 수집 중",
+        "summary": "공식 매뉴얼과 부품 사양을 기준으로 정리할 예정입니다."
+      },
+      {
+        "name": "엔진 에어필터",
+        "category": "소모품",
+        "safety": "직접 관리 범위",
+        "status": "자료 수집 중",
+        "summary": "엔진 사양이 확인된 차량부터 정확한 적용 정보를 연결합니다."
+      },
+      {
+        "name": "일반 외부 전구",
+        "category": "전기·조명",
+        "safety": "직접 관리 범위",
+        "status": "사양 구분 필요",
+        "summary": "할로겐·제논 등 차량 옵션에 따라 부품이 달라질 수 있어 사양 확인을 우선합니다."
+      },
+      {
+        "name": "엔진오일·필터",
+        "category": "소모품",
+        "safety": "정비소/장비 권장",
+        "status": "공식 규격 검증 중",
+        "summary": "Mercedes-Benz 공식 승인 규격과 엔진별 적용 여부를 확인해 표시합니다."
+      },
+      {
+        "name": "냉각수",
+        "category": "엔진·냉각",
+        "safety": "정비소/장비 권장",
+        "status": "공식 규격 검증 중",
+        "summary": "공식 Operating Fluids 자료와 차량 생산시기 적용 범위를 함께 검증합니다."
+      },
+      {
+        "name": "디퍼렌셜 오일",
+        "category": "하체·구동",
+        "safety": "정비소/장비 권장",
+        "status": "사양 검증 중",
+        "summary": "디퍼렌셜 형식과 구동계 사양이 확인된 차량에만 확정 규격을 표시합니다."
+      },
+      {
+        "name": "미션오일",
+        "category": "변속기",
+        "safety": "전문 정비 권장",
+        "status": "차량별 사양 검증 중",
+        "summary": "변속기 코드와 공식 승인 규격을 확인한 뒤 전문 정비 정보 중심으로 제공합니다."
+      },
+      {
+        "name": "브레이크 계통",
+        "category": "하체·제동",
+        "safety": "전문 정비 권장",
+        "status": "안전 우선",
+        "summary": "점검 주기·이상 증상·전문 정비 권장 여부 중심으로 제공합니다."
+      }
+    ],
+    "sourceLabels": [
+      "Mercedes-Benz 공식 서비스/사용설명서",
+      "Mercedes-Benz Operating Fluids",
+      "자동차리콜센터",
+      "공공 자동차 등록·정비 통계"
+    ]
+  }
+]
