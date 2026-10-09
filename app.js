@@ -38,15 +38,17 @@ function render(){
   );
   count.textContent=rows.length+"대";
   cards.innerHTML=rows.length?rows.map(v=>`
-    <article class="card">
-      <span class="pill">${escapeHtml(v.origin)}</span>
-      <span class="pill ${v.status==="우선 수집"?"priority":""}">${escapeHtml(v.status)}</span>
-      <h3>${escapeHtml(v.maker)} ${escapeHtml(v.model)}</h3>
-      <div class="generation">${escapeHtml(v.generation)}</div>
-      <div class="meta">${v.yearFrom}–${v.yearTo} · ${escapeHtml(v.platform||"플랫폼 확인 중")}</div>
-      <div class="aliases">${(v.aliases||[]).map(escapeHtml).join(" · ")}</div>
-      <a class="card-action" href="./vehicle.html?id=${encodeURIComponent(v.id)}">정비·리콜 정보 보기 →</a>
-    </article>`).join(""):'<div class="empty">조건에 맞는 초기 차량이 없습니다. 데이터가 확대되면 자동으로 추가됩니다.</div>';
+    <a class="card-link" href="./vehicle.html?id=${encodeURIComponent(v.id)}" aria-label="${escapeHtml(v.maker)} ${escapeHtml(v.model)} ${escapeHtml(v.generation)} 상세 정보 보기">
+      <article class="card">
+        <span class="pill">${escapeHtml(v.origin)}</span>
+        <span class="pill ${v.status==="우선 수집"?"priority":""}">${escapeHtml(v.status)}</span>
+        <h3>${escapeHtml(v.maker)} ${escapeHtml(v.model)}</h3>
+        <div class="generation">${escapeHtml(v.generation)}</div>
+        <div class="meta">${v.yearFrom}–${v.yearTo} · ${escapeHtml(v.platform||"플랫폼 확인 중")}</div>
+        <div class="aliases">${(v.aliases||[]).map(escapeHtml).join(" · ")}</div>
+        <span class="card-action">정비·리콜 정보 보기 →</span>
+      </article>
+    </a>`).join(""):'<div class="empty">조건에 맞는 초기 차량이 없습니다. 데이터가 확대되면 자동으로 추가됩니다.</div>';
 }
 document.querySelectorAll("#originTabs .tab").forEach(btn=>btn.addEventListener("click",()=>{
   document.querySelectorAll("#originTabs .tab").forEach(x=>x.classList.remove("is-active"));
