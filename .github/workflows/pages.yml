@@ -32,7 +32,10 @@ jobs:
       - name: Validate JavaScript syntax
         run: |
           node --check app.js
+          node --check app-v2.js
           node --check vehicle.js
+      - name: Build static vehicle pages
+        run: python scripts/build_vehicle_pages.py
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site

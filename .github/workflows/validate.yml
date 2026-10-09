@@ -15,4 +15,13 @@ jobs:
       - name: Validate JavaScript syntax
         run: |
           node --check app.js
+          node --check app-v2.js
           node --check vehicle.js
+      - name: Build static vehicle pages
+        run: python scripts/build_vehicle_pages.py
+      - name: Verify generated pages
+        run: |
+          test -f vehicles/mercedes-eclass-w212/index.html
+          test -f vehicles/hyundai-santafe-cm/index.html
+          test -f vehicles/kia-k5-tf/index.html
+          test -f vehicles/bmw-3series-e90/index.html
