@@ -35,6 +35,7 @@ jobs:
           node --check app-v2.js
           node --check vehicle.js
           node --check fuel/fuel.js
+          node --check purchase/purchase.js
       - name: Build static vehicle pages
         run: python scripts/build_vehicle_pages.py
       - name: Verify service category pages
