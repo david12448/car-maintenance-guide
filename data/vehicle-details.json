@@ -517,5 +517,142 @@
         "videoId": "iTG1PqbZNU8"
       }
     ]
+  },
+  {
+    "id": "kia-k5-tf",
+    "title": "기아 K5 1세대 (TF)",
+    "focusVariant": "2011 K5 TF 2.0 가솔린 중심",
+    "production": "2010–2015",
+    "verification": "부분 검증",
+    "identityNotice": "기아 공식 헤리티지 자료에서 1세대 K5는 TF 계열의 전륜구동 중형 세단으로 확인되며, 직렬 4기통 가솔린/LPG와 1,998~2,359cc 사양이 존재합니다. 공개 페이지에서는 우선 2011년 2.0 가솔린을 기준으로 정리하고, 2.4·LPG·하이브리드 및 연식 변경분은 별도로 구분합니다.",
+    "specSummary": [
+      "기아 공식 1세대 K5: 전륜구동(FF)",
+      "직렬 4기통 가솔린/LPG",
+      "배기량 범위 1,998~2,359cc",
+      "2011년 2.0 가솔린 사양부터 세부 정비 규격 검증"
+    ],
+    "recall": {
+      "status": "TF 리콜 1건 확인",
+      "headline": "리콜·무상수리 확인",
+      "summary": "K5라는 차명만으로 JF·DL3 리콜이 섞이지 않도록 TF 세대와 생산기간을 분리합니다. 현재 2010-05-03~2011-04-24 생산 K5의 브레이크 스위치 리콜을 우선 확인했으며, 실제 차량 대상 여부와 조치 완료 여부는 차량번호 또는 VIN 공식 조회가 최종 기준입니다.",
+      "publicSourceRef": "recall-center",
+      "actionLabel": "공식 차량별 조회 연결 준비 중",
+      "records": [
+        {
+          "title": "브레이크 스위치 접촉 불량 관련 리콜",
+          "announced": "2013-09-25",
+          "production": "2010-05-03 ~ 2011-04-24",
+          "summary": "브레이크 스위치 접촉 불량으로 시동·제동등·정속주행장치·차체자세제어장치에 이상이 발생할 가능성과 관련된 리콜입니다.",
+          "remedy": "대상 차량 확인 후 브레이크 스위치 교환"
+        }
+      ]
+    },
+    "maintenance": [
+      {
+        "name": "와이퍼",
+        "category": "소모품",
+        "safety": "직접 관리 범위",
+        "status": "자료 수집 중",
+        "summary": "연식·트림별 와이퍼 규격을 공식 부품 정보와 함께 정리합니다."
+      },
+      {
+        "name": "캐빈/에어컨 필터",
+        "category": "소모품",
+        "safety": "직접 관리 범위",
+        "status": "참고 영상 확인",
+        "summary": "TF 계열 해외 Optima 참고영상과 기아 공식 매뉴얼을 함께 확인해 국내 K5 적용 정보를 정리합니다."
+      },
+      {
+        "name": "엔진 에어필터",
+        "category": "소모품",
+        "safety": "직접 관리 범위",
+        "status": "참고 영상 확인",
+        "summary": "TF 계열 구조 참고자료를 사용하되 국내 2.0/2.4/LPG 사양별 부품번호는 따로 검증합니다."
+      },
+      {
+        "name": "일반 외부 전구",
+        "category": "전기·조명",
+        "safety": "직접 관리 범위",
+        "status": "사양 구분 필요",
+        "summary": "램프 옵션과 연식 변경을 확인한 뒤 적용 정보를 표시합니다."
+      },
+      {
+        "name": "엔진오일·필터",
+        "category": "소모품",
+        "safety": "정비소/장비 권장",
+        "status": "파워트레인별 공식 규격 검증 중",
+        "summary": "2.0 가솔린을 시작으로 엔진별 오일 규격과 용량을 분리해 검증합니다."
+      },
+      {
+        "name": "냉각수",
+        "category": "엔진·냉각",
+        "safety": "정비소/장비 권장",
+        "status": "공식 규격 검증 중",
+        "summary": "연식·엔진별 냉각계 사양을 공식 자료 중심으로 확인합니다."
+      },
+      {
+        "name": "미션오일",
+        "category": "변속기",
+        "safety": "전문 정비 권장",
+        "status": "변속기 구분 중",
+        "summary": "변속기 형식별 공식 규격을 확인하고 전문 정비 정보 중심으로 제공합니다."
+      },
+      {
+        "name": "브레이크/차체자세제어 계통",
+        "category": "하체·제동",
+        "safety": "전문 정비 권장",
+        "status": "리콜 이력 연계",
+        "summary": "브레이크 스위치 리콜 이력과 일반 제동계 점검 정보를 구분해서 제공합니다."
+      }
+    ],
+    "sourceLabels": [
+      "기아 공식 헤리티지 제원",
+      "기아 디지털 오너스 매뉴얼",
+      "국토교통부·자동차리콜센터",
+      "공공 자동차 등록·정비 통계"
+    ],
+    "videoDiscovery": {
+      "status": "국내 영상 추가 수집 중",
+      "sort": "차량 일치도 우선, 이후 조회수·댓글 반응 순",
+      "preferredChannels": [],
+      "groups": [
+        "korea",
+        "overseas"
+      ]
+    },
+    "videos": [
+      {
+        "countryGroup": "overseas",
+        "title": "Cabin Air Filter Replacement | 2011-2015 Kia Optima",
+        "channel": "Fix and Maintain",
+        "topic": "캐빈/에어컨 필터",
+        "matchLabel": "TF 계열 호환 참고",
+        "summary": "2011–2015 Kia Optima TF 계열의 캐빈필터 참고영상입니다. 국내 K5의 부품번호와 세부 사양은 별도로 확인해야 합니다.",
+        "viewCount": 15361,
+        "commentCount": null,
+        "positiveCommentRatio": null,
+        "vehicleMatchScore": 85,
+        "popularityScore": 70,
+        "safetyClass": "owner_simple",
+        "publicLinkPolicy": "direct",
+        "videoId": "i6Cq28rDExo"
+      },
+      {
+        "countryGroup": "overseas",
+        "title": "Engine Air Filter Replacement | 2011-2015 Kia Optima",
+        "channel": "Fix and Maintain",
+        "topic": "엔진 에어필터",
+        "matchLabel": "TF 계열 호환 참고",
+        "summary": "2011–2015 Kia Optima TF 계열의 엔진 에어필터 구조 참고영상입니다. 국내 K5 엔진별 필터 부품은 별도로 검증합니다.",
+        "viewCount": 13276,
+        "commentCount": null,
+        "positiveCommentRatio": null,
+        "vehicleMatchScore": 80,
+        "popularityScore": 68,
+        "safetyClass": "owner_simple",
+        "publicLinkPolicy": "direct",
+        "videoId": "V_Az7CzaXus"
+      }
+    ]
   }
 ]
