@@ -20,10 +20,19 @@ jobs:
           node --check fuel/fuel.js
           node --check purchase/purchase.js
       - name: Build static vehicle pages
+        env:
+          PUBLIC_SITE_ORIGIN: ${{ vars.PUBLIC_SITE_ORIGIN }}
         run: python scripts/build_vehicle_pages.py
+      - name: Validate pretty URLs and SEO
+        run: python validators/validate_routes.py
       - name: Verify generated pages
         run: |
           test -f vehicles/mercedes-eclass-w212/index.html
+          test -f maintenance/hyundai/sonata-nf/index.html
+          test -f maintenance/kia/sportage-sl/index.html
+          test -f maintenance/mercedes-benz/e-class-w212/index.html
+          test -f sitemap.xml
+          test -f robots.txt
           test -f vehicles/hyundai-santafe-cm/index.html
           test -f vehicles/kia-k5-tf/index.html
           test -f vehicles/bmw-3series-e90/index.html

@@ -17,6 +17,15 @@ assert len(ids) == len(set(ids)), "duplicate vehicle id"
 for v in vehicles:
     assert v["yearFrom"] <= v["yearTo"]
     assert v["origin"] in {"국산차", "수입차"}
+    assert v["urlStatus"] in {"legacy", "pilot"}
+    import re
+    assert re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", v["makerSlug"]), "invalid makerSlug"
+    assert re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", v["publicSlug"]), "invalid publicSlug"
+
+pilot_routes = [
+    (v["makerSlug"], v["publicSlug"]) for v in vehicles if v["urlStatus"] == "pilot"
+]
+assert len(pilot_routes) == len(set(pilot_routes)), "duplicate pretty URL route"
 
 topic_ids = [t["id"] for t in topics]
 assert len(topic_ids) == len(set(topic_ids)), "duplicate topic id"

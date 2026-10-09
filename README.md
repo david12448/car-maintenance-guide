@@ -19,3 +19,9 @@
 - 차량/연식/엔진이 확인되지 않은 수치는 확정값으로 표시하지 않습니다.
 
 Private 수집 저장소: `car-maintenance-source`
+
+
+## URL 파일럿
+공개 콘텐츠 주소는 내부 ID와 분리된 slug 기반 고정 URL로 단계적으로 전환합니다.
+현재 파일럿은 `/maintenance/{maker}/{vehicle}/` 형식이며 기존 `/vehicles/{id}/`와 `vehicle.html?id=...` 호환을 유지합니다.
+최종 루트 도메인은 확정 전이며 canonical origin은 `PUBLIC_SITE_ORIGIN`으로 중앙 관리합니다.
