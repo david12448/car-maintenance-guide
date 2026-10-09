@@ -83,7 +83,19 @@
       "Mercedes-Benz Operating Fluids",
       "자동차리콜센터",
       "공공 자동차 등록·정비 통계"
-    ]
+    ],
+    "videoDiscovery": {
+      "status": "수집·검증 중",
+      "sort": "차량 일치도 우선, 이후 조회수·댓글 반응 순",
+      "preferredChannels": [
+        "벤돌"
+      ],
+      "groups": [
+        "korea",
+        "overseas"
+      ]
+    },
+    "videos": []
   },
   {
     "id": "hyundai-sonata-yf",
