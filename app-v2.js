@@ -38,7 +38,7 @@ function render(){
   );
   count.textContent=rows.length+"대";
   cards.innerHTML=rows.length?rows.map(v=>`
-    <a class="card-link" href="./vehicles/${encodeURIComponent(v.id)}/" aria-label="${escapeHtml(v.maker)} ${escapeHtml(v.model)} ${escapeHtml(v.generation)} 상세 정보 보기">
+    <a class="card-link" href="${v.urlStatus==="pilot" ? "./maintenance/"+encodeURIComponent(v.makerSlug)+"/"+encodeURIComponent(v.publicSlug)+"/" : "./vehicles/"+encodeURIComponent(v.id)+"/"}" aria-label="${escapeHtml(v.maker)} ${escapeHtml(v.model)} ${escapeHtml(v.generation)} 상세 정보 보기">
       <article class="card">
         <span class="pill">${escapeHtml(v.origin)}</span>
         <span class="pill ${v.status==="우선 수집"?"priority":""}">${escapeHtml(v.status)}</span>

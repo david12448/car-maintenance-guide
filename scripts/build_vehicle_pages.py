@@ -1,14 +1,37 @@
 import html
 import json
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 OUT = ROOT / "vehicles"
+CANONICAL_OUT = ROOT / "maintenance"
+CONFIG = json.loads((ROOT / "config/site.json").read_text(encoding="utf-8"))
+SITE_ORIGIN = (os.getenv("PUBLIC_SITE_ORIGIN") or CONFIG["defaultOrigin"]).rstrip("/")
 
 vehicles = json.loads((DATA / "vehicles.json").read_text(encoding="utf-8"))
 details = json.loads((DATA / "vehicle-details.json").read_text(encoding="utf-8"))
 detail_map = {d["id"]: d for d in details}
+
+def absolute_url(path):
+    clean = path.strip("/")
+    if not clean:
+        return SITE_ORIGIN + "/"
+    suffix = "/" if path.endswith("/") else ""
+    return SITE_ORIGIN + "/" + clean + suffix
+
+def canonical_path(vehicle):
+    return f'maintenance/{vehicle["makerSlug"]}/{vehicle["publicSlug"]}/'
+
+def legacy_path(vehicle):
+    return f'vehicles/{vehicle["id"]}/'
+
+def route_for(vehicle):
+    return canonical_path(vehicle) if vehicle.get("urlStatus") == "pilot" else legacy_path(vehicle)
+
+def seo_json(obj):
+    return json.dumps(obj, ensure_ascii=False).replace("</", "<\\/")
 
 def e(v):
     return html.escape(str(v if v is not None else ""), quote=True)
@@ -208,23 +231,33 @@ def render_pending(vehicle):
         <p>제조사 공식 매뉴얼·자동차리콜센터·공공 통계를 우선하고, 유튜브·블로그는 차량 사양이 맞는지 확인한 뒤 참고자료로 추가합니다.</p></section>"""
     }
 
-OUT.mkdir(exist_ok=True)
-for vehicle in vehicles:
-    detail = detail_map.get(vehicle["id"])
-    rendered = render_detail(vehicle, detail) if detail else render_pending(vehicle)
-    page = f"""<!doctype html>
+def full_page(vehicle, rendered, *, canonical, stylesheet, back_href, breadcrumb_items=None):
+    json_ld = ""
+    if breadcrumb_items:
+        data = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": i + 1, "name": name, "item": absolute_url(path)}
+                for i, (name, path) in enumerate(breadcrumb_items)
+            ],
+        }
+        json_ld = f'<script type="application/ld+json">{seo_json(data)}</script>'
+    return f"""<!doctype html>
 <html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="{e(rendered["title"])} 자동차 정비 및 리콜 가이드">
-  <title>{e(rendered["title"])} 정비 가이드</title>
-  <link rel="stylesheet" href="../../styles.css?v=20261009c">
+  <meta name="description" content="{e(rendered["title"])} {e(rendered["focus"])} 정비·리콜 정보">
+  <title>{e(rendered["title"])} 정비·리콜 가이드</title>
+  <link rel="canonical" href="{e(canonical)}">
+  <link rel="stylesheet" href="{stylesheet}?v=20261010-url1">
+  {json_ld}
 </head>
 <body>
   <header class="detail-hero">
     <div class="wrap">
-      <a class="back-link" href="../../">← 차량 목록</a>
+      <a class="back-link" href="{back_href}">← 차량 목록</a>
       <p class="eyebrow">VEHICLE GUIDE</p>
       <h1>{e(rendered["title"])}</h1>
       <p class="hero-copy">{e(rendered["focus"])}</p>
@@ -239,8 +272,140 @@ for vehicle in vehicles:
   </main>
 </body>
 </html>"""
-    path = OUT / vehicle["id"] / "index.html"
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(page, encoding="utf-8")
 
-print(f"built vehicle pages={len(vehicles)} details={len(details)}")
+def compatibility_redirect(vehicle, rendered):
+    target = absolute_url(canonical_path(vehicle))
+    return f"""<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <meta http-equiv="refresh" content="0; url={e(target)}">
+  <link rel="canonical" href="{e(target)}">
+  <title>{e(rendered["title"])} 새 주소로 이동</title>
+  <script>location.replace({json.dumps(target)});</script>
+</head>
+<body>
+  <p>새 고정 주소로 이동합니다. <a href="{e(target)}">계속하기</a></p>
+</body>
+</html>"""
+
+def write(path, content):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content, encoding="utf-8")
+
+def patch_canonical(path, target):
+    text = path.read_text(encoding="utf-8")
+    marker = "<!-- SEO_CANONICAL -->"
+    if marker not in text:
+        raise RuntimeError(f"canonical marker missing: {path}")
+    path.write_text(text.replace(marker, f'<link rel="canonical" href="{e(target)}">'), encoding="utf-8")
+
+OUT.mkdir(exist_ok=True)
+CANONICAL_OUT.mkdir(exist_ok=True)
+
+pilot = [v for v in vehicles if v.get("urlStatus") == "pilot"]
+pilot_makers = sorted({v["makerSlug"] for v in pilot})
+
+for vehicle in vehicles:
+    detail = detail_map.get(vehicle["id"])
+    rendered = render_detail(vehicle, detail) if detail else render_pending(vehicle)
+    legacy_file = OUT / vehicle["id"] / "index.html"
+    if vehicle.get("urlStatus") == "pilot":
+        canonical = absolute_url(canonical_path(vehicle))
+        breadcrumb = [
+            ("자동차 생활", ""),
+            ("정비·리콜", "maintenance/"),
+            (vehicle["maker"], f'maintenance/{vehicle["makerSlug"]}/'),
+            (rendered["title"], canonical_path(vehicle)),
+        ]
+        canonical_file = CANONICAL_OUT / vehicle["makerSlug"] / vehicle["publicSlug"] / "index.html"
+        write(canonical_file, full_page(
+            vehicle, rendered,
+            canonical=canonical,
+            stylesheet="../../../styles.css",
+            back_href="../../../",
+            breadcrumb_items=breadcrumb,
+        ))
+        write(legacy_file, compatibility_redirect(vehicle, rendered))
+    else:
+        legacy_canonical = absolute_url(legacy_path(vehicle))
+        write(legacy_file, full_page(
+            vehicle, rendered,
+            canonical=legacy_canonical,
+            stylesheet="../../styles.css",
+            back_href="../../",
+        ))
+
+maintenance_cards = []
+for maker_slug in pilot_makers:
+    maker_vehicles = [v for v in pilot if v["makerSlug"] == maker_slug]
+    maker_name = maker_vehicles[0]["maker"]
+    maintenance_cards.append(
+        f'<a class="card-link" href="./{e(maker_slug)}/"><article class="card">'
+        f'<span class="pill">제조사</span><h3>{e(maker_name)}</h3>'
+        f'<div class="meta">고정 URL 파일럿 {len(maker_vehicles)}대</div>'
+        f'<span class="card-action">차량 보기 →</span></article></a>'
+    )
+maintenance_page = f"""<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="제조사와 차종별 자동차 정비·리콜 가이드">
+<title>자동차 정비·리콜 가이드</title>
+<link rel="canonical" href="{e(absolute_url("maintenance/"))}">
+<link rel="stylesheet" href="../styles.css?v=20261010-url1">
+</head><body>
+<header class="module-hero"><div class="wrap"><a class="back-link" href="../">← 자동차 생활 홈</a>
+<p class="eyebrow">MAINTENANCE</p><h1>정비·리콜</h1>
+<p class="hero-copy">제조사 → 차종·세대 → 연식·엔진 사양 순으로 확인합니다.</p></div></header>
+<main class="wrap module-main"><div class="cards">{''.join(maintenance_cards)}</div></main>
+</body></html>"""
+write(CANONICAL_OUT / "index.html", maintenance_page)
+
+for maker_slug in pilot_makers:
+    maker_vehicles = [v for v in pilot if v["makerSlug"] == maker_slug]
+    maker_name = maker_vehicles[0]["maker"]
+    cards = []
+    for vehicle in maker_vehicles:
+        detail = detail_map.get(vehicle["id"])
+        rendered = render_detail(vehicle, detail) if detail else render_pending(vehicle)
+        cards.append(
+            f'<a class="card-link" href="./{e(vehicle["publicSlug"])}/"><article class="card">'
+            f'<span class="pill">{e(vehicle["generation"])}</span><h3>{e(rendered["title"])}</h3>'
+            f'<div class="meta">{vehicle["yearFrom"]}–{vehicle["yearTo"]}</div>'
+            f'<span class="card-action">정비·리콜 정보 보기 →</span></article></a>'
+        )
+    maker_page = f"""<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="{e(maker_name)} 차종별 정비·리콜 가이드">
+<title>{e(maker_name)} 정비·리콜 가이드</title>
+<link rel="canonical" href="{e(absolute_url(f"maintenance/{maker_slug}/"))}">
+<link rel="stylesheet" href="../../styles.css?v=20261010-url1">
+</head><body>
+<header class="module-hero"><div class="wrap"><a class="back-link" href="../">← 정비·리콜</a>
+<p class="eyebrow">MAKER</p><h1>{e(maker_name)}</h1>
+<p class="hero-copy">차종·세대별 고정 URL 파일럿</p></div></header>
+<main class="wrap module-main"><div class="cards">{''.join(cards)}</div></main>
+</body></html>"""
+    write(CANONICAL_OUT / maker_slug / "index.html", maker_page)
+
+patch_canonical(ROOT / "index.html", absolute_url(""))
+patch_canonical(ROOT / "fuel/index.html", absolute_url("fuel/"))
+patch_canonical(ROOT / "purchase/index.html", absolute_url("purchase/"))
+
+sitemap_paths = ["", "fuel/", "purchase/", "maintenance/"]
+sitemap_paths += [f"maintenance/{m}/" for m in pilot_makers]
+sitemap_paths += [canonical_path(v) for v in pilot]
+sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n' + \
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + \
+    ''.join(f'  <url><loc>{e(absolute_url(p))}</loc></url>\n' for p in sitemap_paths) + \
+    '</urlset>\n'
+write(ROOT / "sitemap.xml", sitemap)
+write(ROOT / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {absolute_url('sitemap.xml')}\n")
+
+print(
+    f"built vehicle pages={len(vehicles)} details={len(details)} "
+    f"pretty_url_pilot={len(pilot)} origin={SITE_ORIGIN}"
+)

@@ -37,7 +37,11 @@ jobs:
           node --check fuel/fuel.js
           node --check purchase/purchase.js
       - name: Build static vehicle pages
+        env:
+          PUBLIC_SITE_ORIGIN: ${{ vars.PUBLIC_SITE_ORIGIN }}
         run: python scripts/build_vehicle_pages.py
+      - name: Validate pretty URLs and SEO
+        run: python validators/validate_routes.py
       - name: Verify service category pages
         run: |
           test -f fuel/index.html
