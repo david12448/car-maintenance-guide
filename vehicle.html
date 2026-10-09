@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="차량별 자동차 정비 및 리콜 가이드">
+  <title>차량 정비 상세 | 자동차 정비 가이드</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="detail-hero">
+    <div class="wrap">
+      <a class="back-link" href="./">← 차량 목록</a>
+      <p class="eyebrow">VEHICLE GUIDE</p>
+      <h1 id="vehicleTitle">차량 정보 불러오는 중</h1>
+      <p id="vehicleFocus" class="hero-copy"></p>
+    </div>
+  </header>
+  <main class="wrap detail-main">
+    <section id="identityCard" class="detail-panel"></section>
+    <section id="recallCard" class="recall-card"></section>
+    <section>
+      <div class="section-head">
+        <div><p class="eyebrow">MAINTENANCE</p><h2>정비·관리 항목</h2></div>
+      </div>
+      <div id="maintenanceGrid" class="maintenance-grid"></div>
+    </section>
+    <section id="sourcesCard" class="detail-panel"></section>
+    <section class="safety-note">
+      <h2>안전 기준</h2>
+      <p>차량을 들어 올리거나 제동·변속기·연료·에어백·고전압 계통과 관련된 작업은 전문 정비 권장을 우선합니다. 이 페이지는 차량 식별과 공식 규격·리콜 확인을 돕는 정보 가이드입니다.</p>
+    </section>
+  </main>
+  <script src="./vehicle.js"></script>
+</body>
+</html>

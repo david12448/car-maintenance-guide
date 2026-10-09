@@ -10,6 +10,7 @@ for path in DATA.glob("*.json"):
 
 vehicles = json.loads((DATA / "vehicles.json").read_text(encoding="utf-8"))
 topics = json.loads((DATA / "topics.json").read_text(encoding="utf-8"))
+details = json.loads((DATA / "vehicle-details.json").read_text(encoding="utf-8"))
 
 ids = [v["id"] for v in vehicles]
 assert len(ids) == len(set(ids)), "duplicate vehicle id"
@@ -20,10 +21,17 @@ for v in vehicles:
 topic_ids = [t["id"] for t in topics]
 assert len(topic_ids) == len(set(topic_ids)), "duplicate topic id"
 
+detail_ids = [d["id"] for d in details]
+assert len(detail_ids) == len(set(detail_ids)), "duplicate detail id"
+assert set(detail_ids).issubset(set(ids)), "detail vehicle must exist in vehicles.json"
+for d in details:
+    assert d["recall"]["publicSourceRef"]
+    assert "http" not in d["recall"]["publicSourceRef"].lower()
+
 # Public JSON must not expose private collection infrastructure or direct source URLs.
 for path in DATA.glob("*.json"):
     text = path.read_text(encoding="utf-8").lower()
     for forbidden in ("https://", "http://", '"source_url"', '"raw_url"', '"collector"', '"parser"', '"endpoint"'):
         assert forbidden not in text, f"{path.name}: forbidden public token {forbidden}"
 
-print(f"OK public vehicles={len(vehicles)} topics={len(topics)}")
+print(f"OK public vehicles={len(vehicles)} topics={len(topics)} details={len(details)}")

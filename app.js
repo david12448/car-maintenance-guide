@@ -14,9 +14,7 @@ function setOptions(el,values,label){
   if([...el.options].some(o=>o.value===selected))el.value=selected;
 }
 function escapeHtml(v){return String(v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
-function baseRows(){
-  return state.rows.filter(v=>(!state.origin||v.origin===state.origin));
-}
+function baseRows(){return state.rows.filter(v=>(!state.origin||v.origin===state.origin))}
 function rebuildFilters(){
   const a=baseRows();
   setOptions(maker,a.map(v=>v.maker),"제조사 전체");
@@ -47,6 +45,7 @@ function render(){
       <div class="generation">${escapeHtml(v.generation)}</div>
       <div class="meta">${v.yearFrom}–${v.yearTo} · ${escapeHtml(v.platform||"플랫폼 확인 중")}</div>
       <div class="aliases">${(v.aliases||[]).map(escapeHtml).join(" · ")}</div>
+      <a class="card-action" href="./vehicle.html?id=${encodeURIComponent(v.id)}">정비·리콜 정보 보기 →</a>
     </article>`).join(""):'<div class="empty">조건에 맞는 초기 차량이 없습니다. 데이터가 확대되면 자동으로 추가됩니다.</div>';
 }
 document.querySelectorAll("#originTabs .tab").forEach(btn=>btn.addEventListener("click",()=>{
