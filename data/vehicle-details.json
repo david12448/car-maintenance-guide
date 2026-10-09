@@ -19,63 +19,108 @@
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "자료 수집 중",
-        "summary": "차량별 규격과 장착 사양을 확인해 공개할 예정입니다."
+        "summary": "차량별 규격과 장착 사양을 확인해 공개할 예정입니다.",
+        "scopeLabel": "연식·와이퍼 규격별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "캐빈/에어컨 필터",
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "자료 수집 중",
-        "summary": "공식 매뉴얼과 부품 사양을 기준으로 정리할 예정입니다."
+        "summary": "공식 매뉴얼과 부품 사양을 기준으로 정리할 예정입니다.",
+        "scopeLabel": "연식·차체 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "엔진 에어필터",
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "자료 수집 중",
-        "summary": "엔진 사양이 확인된 차량부터 정확한 적용 정보를 연결합니다."
+        "summary": "엔진 사양이 확인된 차량부터 정확한 적용 정보를 연결합니다.",
+        "scopeLabel": "엔진·흡기 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "일반 외부 전구",
         "category": "전기·조명",
         "safety": "직접 관리 범위",
         "status": "사양 구분 필요",
-        "summary": "할로겐·제논 등 차량 옵션에 따라 부품이 달라질 수 있어 사양 확인을 우선합니다."
+        "summary": "할로겐·제논 등 차량 옵션에 따라 부품이 달라질 수 있어 사양 확인을 우선합니다.",
+        "scopeLabel": "램프 옵션·연식별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "엔진오일·필터",
         "category": "소모품",
         "safety": "정비소/장비 권장",
         "status": "공식 규격 검증 중",
-        "summary": "Mercedes-Benz 공식 승인 규격과 엔진별 적용 여부를 확인해 표시합니다."
+        "summary": "Mercedes-Benz 공식 승인 규격과 엔진별 적용 여부를 확인해 표시합니다.",
+        "scopeLabel": "엔진·연료별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "냉각수",
         "category": "엔진·냉각",
         "safety": "정비소/장비 권장",
         "status": "공식 규격 검증 중",
-        "summary": "공식 Operating Fluids 자료와 차량 생산시기 적용 범위를 함께 검증합니다."
+        "summary": "공식 Operating Fluids 자료와 차량 생산시기 적용 범위를 함께 검증합니다.",
+        "scopeLabel": "엔진·연식별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "디퍼렌셜 오일",
         "category": "하체·구동",
         "safety": "정비소/장비 권장",
         "status": "사양 검증 중",
-        "summary": "디퍼렌셜 형식과 구동계 사양이 확인된 차량에만 확정 규격을 표시합니다."
+        "summary": "디퍼렌셜 형식과 구동계 사양이 확인된 차량에만 확정 규격을 표시합니다.",
+        "scopeLabel": "구동방식·디퍼렌셜별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "미션오일",
         "category": "변속기",
         "safety": "전문 정비 권장",
         "status": "차량별 사양 검증 중",
-        "summary": "변속기 코드와 공식 승인 규격을 확인한 뒤 전문 정비 정보 중심으로 제공합니다."
+        "summary": "변속기 코드와 공식 승인 규격을 확인한 뒤 전문 정비 정보 중심으로 제공합니다.",
+        "scopeLabel": "변속기 코드별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "브레이크 계통",
         "category": "하체·제동",
         "safety": "전문 정비 권장",
         "status": "안전 우선",
-        "summary": "점검 주기·이상 증상·전문 정비 권장 여부 중심으로 제공합니다."
+        "summary": "점검 주기·이상 증상·전문 정비 권장 여부 중심으로 제공합니다.",
+        "scopeLabel": "생산기간·제동 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       }
     ],
     "sourceLabels": [
@@ -95,7 +140,23 @@
         "overseas"
       ]
     },
-    "videos": []
+    "videos": [],
+    "variantPolicyNote": "같은 차명·세대라도 연식, 엔진/연료, 변속기, 구동방식에 따라 정비 규격이 달라질 수 있습니다. 현재 선택된 사양에 검증된 정보만 적용하며 다른 사양으로 자동 상속하지 않습니다.",
+    "variants": [
+      {
+        "variantId": "2011-e200-cgi",
+        "label": "2011 E200 CGI",
+        "yearFrom": 2011,
+        "yearTo": 2011,
+        "fuel": null,
+        "engine": "세부 엔진 코드 검증 중",
+        "transmission": "세부 변속기 코드 검증 중",
+        "drivetrain": null,
+        "verification": "pending",
+        "isPrimary": true,
+        "note": "현재 이 사양을 기준으로 자료를 모으고 있으며 코드 확정 전 다른 W212 사양의 규격을 대입하지 않습니다."
+      }
+    ]
   },
   {
     "id": "hyundai-sonata-yf",
@@ -126,56 +187,96 @@
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "자료 수집 중",
-        "summary": "연식·사양별 규격을 공식 자료와 교차검증해 표시할 예정입니다."
+        "summary": "연식·사양별 규격을 공식 자료와 교차검증해 표시할 예정입니다.",
+        "scopeLabel": "연식·와이퍼 규격별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "캐빈/에어컨 필터",
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "자료 수집 중",
-        "summary": "공식 매뉴얼과 부품 사양을 기준으로 적용 정보를 정리합니다."
+        "summary": "공식 매뉴얼과 부품 사양을 기준으로 적용 정보를 정리합니다.",
+        "scopeLabel": "연식·차체 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "엔진 에어필터",
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "파워트레인 구분 중",
-        "summary": "엔진 종류에 따라 적용 부품이 달라질 수 있어 차량 사양 확인을 우선합니다."
+        "summary": "엔진 종류에 따라 적용 부품이 달라질 수 있어 차량 사양 확인을 우선합니다.",
+        "scopeLabel": "엔진·흡기 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "일반 외부 전구",
         "category": "전기·조명",
         "safety": "직접 관리 범위",
         "status": "사양 구분 필요",
-        "summary": "램프 사양과 옵션 차이를 확인한 뒤 적용 정보를 표시합니다."
+        "summary": "램프 사양과 옵션 차이를 확인한 뒤 적용 정보를 표시합니다.",
+        "scopeLabel": "램프 옵션·연식별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "엔진오일·필터",
         "category": "소모품",
         "safety": "정비소/장비 권장",
         "status": "공식 규격 검증 중",
-        "summary": "엔진별 공식 규격과 용량을 확인한 후 차량별 정보로 제공합니다."
+        "summary": "엔진별 공식 규격과 용량을 확인한 후 차량별 정보로 제공합니다.",
+        "scopeLabel": "엔진·연료별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "냉각수",
         "category": "엔진·냉각",
         "safety": "정비소/장비 권장",
         "status": "공식 규격 검증 중",
-        "summary": "차량별 냉각계 사양과 공식 교환 기준을 확인해 제공합니다."
+        "summary": "차량별 냉각계 사양과 공식 교환 기준을 확인해 제공합니다.",
+        "scopeLabel": "엔진·연식별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "미션오일",
         "category": "변속기",
         "safety": "전문 정비 권장",
         "status": "변속기 구분 중",
-        "summary": "변속기 형식별 공식 규격을 확인하고 전문 정비 정보 중심으로 제공합니다."
+        "summary": "변속기 형식별 공식 규격을 확인하고 전문 정비 정보 중심으로 제공합니다.",
+        "scopeLabel": "변속기 코드별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "브레이크 계통",
         "category": "하체·제동",
         "safety": "전문 정비 권장",
         "status": "안전 우선",
-        "summary": "점검 정보와 이상 증상, 전문 정비 권장 여부를 중심으로 제공합니다."
+        "summary": "점검 정보와 이상 증상, 전문 정비 권장 여부를 중심으로 제공합니다.",
+        "scopeLabel": "생산기간·제동 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       }
     ],
     "sourceLabels": [
@@ -183,6 +284,22 @@
       "현대자동차 디지털 오너스 매뉴얼",
       "자동차리콜센터",
       "공공 자동차 등록·정비 통계"
+    ],
+    "variantPolicyNote": "같은 차명·세대라도 연식, 엔진/연료, 변속기, 구동방식에 따라 정비 규격이 달라질 수 있습니다. 현재 선택된 사양에 검증된 정보만 적용하며 다른 사양으로 자동 상속하지 않습니다.",
+    "variants": [
+      {
+        "variantId": "2010-2011-yf-pending",
+        "label": "2010–2011 YF 쏘나타",
+        "yearFrom": 2010,
+        "yearTo": 2011,
+        "fuel": null,
+        "engine": "엔진/연료 세부 구분 중",
+        "transmission": "변속기 세부 구분 중",
+        "drivetrain": "FWD 계열",
+        "verification": "pending",
+        "isPrimary": true,
+        "note": "가솔린·LPI·하이브리드 등 파워트레인별 정비 규격을 별도 검증합니다."
+      }
     ]
   },
   {
@@ -221,56 +338,96 @@
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "자료 수집 중",
-        "summary": "연식·사양별 와이퍼 규격을 확인해 차량별로 정리합니다."
+        "summary": "연식·사양별 와이퍼 규격을 확인해 차량별로 정리합니다.",
+        "scopeLabel": "연식·와이퍼 규격별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "캐빈/에어컨 필터",
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "자료 수집 중",
-        "summary": "공식 매뉴얼과 부품 사양을 기준으로 적용 정보를 정리합니다."
+        "summary": "공식 매뉴얼과 부품 사양을 기준으로 적용 정보를 정리합니다.",
+        "scopeLabel": "연식·차체 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "엔진 에어필터",
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "엔진 구분 중",
-        "summary": "엔진 종류에 따라 적용 부품이 달라질 수 있어 파워트레인 식별을 우선합니다."
+        "summary": "엔진 종류에 따라 적용 부품이 달라질 수 있어 파워트레인 식별을 우선합니다.",
+        "scopeLabel": "엔진·흡기 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "일반 외부 전구",
         "category": "전기·조명",
         "safety": "직접 관리 범위",
         "status": "사양 구분 필요",
-        "summary": "램프 종류와 옵션을 확인한 뒤 적용 규격을 표시합니다."
+        "summary": "램프 종류와 옵션을 확인한 뒤 적용 규격을 표시합니다.",
+        "scopeLabel": "램프 옵션·연식별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "엔진오일·필터",
         "category": "소모품",
         "safety": "정비소/장비 권장",
         "status": "공식 규격 검증 중",
-        "summary": "엔진별 오일 규격과 용량을 공식 자료로 검증해 제공합니다."
+        "summary": "엔진별 오일 규격과 용량을 공식 자료로 검증해 제공합니다.",
+        "scopeLabel": "엔진·연료별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "냉각수",
         "category": "엔진·냉각",
         "safety": "정비소/장비 권장",
         "status": "공식 규격 검증 중",
-        "summary": "냉각계 사양과 교환 기준을 차량별로 검증합니다."
+        "summary": "냉각계 사양과 교환 기준을 차량별로 검증합니다.",
+        "scopeLabel": "엔진·연식별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "미션오일",
         "category": "변속기",
         "safety": "전문 정비 권장",
         "status": "변속기 구분 중",
-        "summary": "변속기 형식별 공식 규격을 확인하고 전문 정비 정보 중심으로 제공합니다."
+        "summary": "변속기 형식별 공식 규격을 확인하고 전문 정비 정보 중심으로 제공합니다.",
+        "scopeLabel": "변속기 코드별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "브레이크 계통",
         "category": "하체·제동",
         "safety": "전문 정비 권장",
         "status": "리콜 이력 연계",
-        "summary": "브레이크 스위치 리콜 이력과 일반 제동계 점검 정보를 구분해 제공합니다."
+        "summary": "브레이크 스위치 리콜 이력과 일반 제동계 점검 정보를 구분해 제공합니다.",
+        "scopeLabel": "생산기간·제동 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       }
     ],
     "sourceLabels": [
@@ -278,6 +435,22 @@
       "국토교통부 공식 리콜 발표",
       "자동차리콜센터",
       "공공 자동차 등록·정비 통계"
+    ],
+    "variantPolicyNote": "같은 차명·세대라도 연식, 엔진/연료, 변속기, 구동방식에 따라 정비 규격이 달라질 수 있습니다. 현재 선택된 사양에 검증된 정보만 적용하며 다른 사양으로 자동 상속하지 않습니다.",
+    "variants": [
+      {
+        "variantId": "2007-2010-tg-pending",
+        "label": "2007–2010 그랜저 TG",
+        "yearFrom": 2007,
+        "yearTo": 2010,
+        "fuel": null,
+        "engine": "엔진 사양별 구분 중",
+        "transmission": "변속기 사양별 구분 중",
+        "drivetrain": "FWD 계열",
+        "verification": "pending",
+        "isPrimary": true,
+        "note": "배기량·연료·변속기별 정비 규격이 다를 수 있어 세부 사양 확인 전 공통값을 사용하지 않습니다."
+      }
     ]
   },
   {
@@ -309,56 +482,96 @@
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "자료 수집 중",
-        "summary": "연식·차체 사양별 와이퍼 규격을 확인해 정리합니다."
+        "summary": "연식·차체 사양별 와이퍼 규격을 확인해 정리합니다.",
+        "scopeLabel": "연식·와이퍼 규격별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "캐빈/에어컨 필터",
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "자료 수집 중",
-        "summary": "공식 매뉴얼과 부품 사양을 기준으로 적용 정보를 정리합니다."
+        "summary": "공식 매뉴얼과 부품 사양을 기준으로 적용 정보를 정리합니다.",
+        "scopeLabel": "연식·차체 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "엔진 에어필터",
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "연료별 구분 중",
-        "summary": "가솔린·디젤 등 파워트레인별 적용 부품을 분리해 제공합니다."
+        "summary": "가솔린·디젤 등 파워트레인별 적용 부품을 분리해 제공합니다.",
+        "scopeLabel": "엔진·흡기 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "일반 외부 전구",
         "category": "전기·조명",
         "safety": "직접 관리 범위",
         "status": "사양 구분 필요",
-        "summary": "램프 옵션과 차체 사양을 확인한 뒤 적용 정보를 표시합니다."
+        "summary": "램프 옵션과 차체 사양을 확인한 뒤 적용 정보를 표시합니다.",
+        "scopeLabel": "램프 옵션·연식별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "엔진오일·필터",
         "category": "소모품",
         "safety": "정비소/장비 권장",
         "status": "연료별 공식 규격 검증 중",
-        "summary": "가솔린과 디젤의 엔진오일 규격을 분리해 공식 자료로 검증합니다."
+        "summary": "가솔린과 디젤의 엔진오일 규격을 분리해 공식 자료로 검증합니다.",
+        "scopeLabel": "엔진·연료별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "냉각수",
         "category": "엔진·냉각",
         "safety": "정비소/장비 권장",
         "status": "공식 규격 검증 중",
-        "summary": "파워트레인별 냉각계 사양과 교환 기준을 확인해 제공합니다."
+        "summary": "파워트레인별 냉각계 사양과 교환 기준을 확인해 제공합니다.",
+        "scopeLabel": "엔진·연식별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "미션오일",
         "category": "변속기",
         "safety": "전문 정비 권장",
         "status": "변속기 구분 중",
-        "summary": "변속기 형식별 공식 규격을 확인하고 전문 정비 정보 중심으로 제공합니다."
+        "summary": "변속기 형식별 공식 규격을 확인하고 전문 정비 정보 중심으로 제공합니다.",
+        "scopeLabel": "변속기 코드별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "브레이크 계통",
         "category": "하체·제동",
         "safety": "전문 정비 권장",
         "status": "디젤 리콜 이력 연계",
-        "summary": "브레이크 진공호스 리콜과 일반 제동계 점검 정보를 구분해서 제공합니다."
+        "summary": "브레이크 진공호스 리콜과 일반 제동계 점검 정보를 구분해서 제공합니다.",
+        "scopeLabel": "생산기간·제동 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       }
     ],
     "sourceLabels": [
@@ -366,6 +579,22 @@
       "국토교통부 공식 강제리콜 발표",
       "자동차리콜센터",
       "공공 자동차 등록·정비 통계"
+    ],
+    "variantPolicyNote": "같은 차명·세대라도 연식, 엔진/연료, 변속기, 구동방식에 따라 정비 규격이 달라질 수 있습니다. 현재 선택된 사양에 검증된 정보만 적용하며 다른 사양으로 자동 상속하지 않습니다.",
+    "variants": [
+      {
+        "variantId": "2013-2015-md-diesel",
+        "label": "2013–2015 아반떼 MD 디젤",
+        "yearFrom": 2013,
+        "yearTo": 2015,
+        "fuel": "디젤",
+        "engine": "디젤 사양",
+        "transmission": "세부 변속기 검증 중",
+        "drivetrain": "FWD",
+        "verification": "partial",
+        "isPrimary": true,
+        "note": "현재 리콜과 정비 자료는 디젤 사양을 우선 기준으로 하며 가솔린/LPI에 자동 적용하지 않습니다."
+      }
     ]
   },
   {
@@ -409,63 +638,108 @@
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "자료 수집 중",
-        "summary": "연식·트림별 규격을 확인해 차량별로 정리합니다."
+        "summary": "연식·트림별 규격을 확인해 차량별로 정리합니다.",
+        "scopeLabel": "연식·와이퍼 규격별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "캐빈/에어컨 필터",
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "참고 영상 확인",
-        "summary": "CM 세대 전용 참고영상과 공식 매뉴얼을 함께 확인해 적용 정보를 정리합니다."
+        "summary": "CM 세대 전용 참고영상과 공식 매뉴얼을 함께 확인해 적용 정보를 정리합니다.",
+        "scopeLabel": "연식·차체 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "엔진 에어필터",
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "참고 영상 확인",
-        "summary": "엔진 사양별 필터 적용 차이를 확인한 뒤 정확한 부품 정보를 제공합니다."
+        "summary": "엔진 사양별 필터 적용 차이를 확인한 뒤 정확한 부품 정보를 제공합니다.",
+        "scopeLabel": "엔진·흡기 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "일반 외부 전구",
         "category": "전기·조명",
         "safety": "직접 관리 범위",
         "status": "사양 구분 필요",
-        "summary": "램프 옵션과 연식별 차이를 확인한 뒤 적용 정보를 표시합니다."
+        "summary": "램프 옵션과 연식별 차이를 확인한 뒤 적용 정보를 표시합니다.",
+        "scopeLabel": "램프 옵션·연식별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "엔진오일·필터",
         "category": "소모품",
         "safety": "정비소/장비 권장",
         "status": "엔진별 공식 규격 검증 중",
-        "summary": "초기 2.0 디젤과 후기 R엔진을 분리해 오일 규격과 용량을 검증합니다."
+        "summary": "초기 2.0 디젤과 후기 R엔진을 분리해 오일 규격과 용량을 검증합니다.",
+        "scopeLabel": "엔진·연료별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "냉각수",
         "category": "엔진·냉각",
         "safety": "정비소/장비 권장",
         "status": "공식 규격 검증 중",
-        "summary": "파워트레인과 연식별 냉각계 사양을 확인해 제공합니다."
+        "summary": "파워트레인과 연식별 냉각계 사양을 확인해 제공합니다.",
+        "scopeLabel": "엔진·연식별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "미션오일",
         "category": "변속기",
         "safety": "전문 정비 권장",
         "status": "변속기 구분 중",
-        "summary": "변속기 형식별 공식 규격을 확인하고 전문 정비 정보 중심으로 제공합니다."
+        "summary": "변속기 형식별 공식 규격을 확인하고 전문 정비 정보 중심으로 제공합니다.",
+        "scopeLabel": "변속기 코드별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "브레이크/ABS 계통",
         "category": "하체·제동",
         "safety": "전문 정비 권장",
         "status": "리콜 이력 연계",
-        "summary": "ABS/ESC 리콜과 일반 제동계 점검 정보를 구분해서 제공합니다."
+        "summary": "ABS/ESC 리콜과 일반 제동계 점검 정보를 구분해서 제공합니다.",
+        "scopeLabel": "생산기간·제동 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "연료 계통",
         "category": "엔진·연료",
         "safety": "전문 정비 권장",
         "status": "R엔진 리콜 이력 연계",
-        "summary": "2011년 R엔진 연료공급호스 리콜 대상 여부 확인을 우선합니다."
+        "summary": "2011년 R엔진 연료공급호스 리콜 대상 여부 확인을 우선합니다.",
+        "scopeLabel": "엔진·연료계통별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       }
     ],
     "sourceLabels": [
@@ -516,6 +790,35 @@
         "publicLinkPolicy": "direct",
         "videoId": "iTG1PqbZNU8"
       }
+    ],
+    "variantPolicyNote": "같은 차명·세대라도 연식, 엔진/연료, 변속기, 구동방식에 따라 정비 규격이 달라질 수 있습니다. 현재 선택된 사양에 검증된 정보만 적용하며 다른 사양으로 자동 상속하지 않습니다.",
+    "variants": [
+      {
+        "variantId": "2008-cm-2-0-diesel",
+        "label": "2008 싼타페 CM 2.0 디젤",
+        "yearFrom": 2008,
+        "yearTo": 2008,
+        "fuel": "디젤",
+        "engine": "2.0 디젤",
+        "transmission": "5단 자동",
+        "drivetrain": "FWD",
+        "verification": "partial",
+        "isPrimary": true,
+        "note": "초기형 공식 제원을 기준으로 한 현재 상세 기준 사양입니다."
+      },
+      {
+        "variantId": "2011-cm-r-diesel",
+        "label": "2011 싼타페 CM R엔진 디젤",
+        "yearFrom": 2011,
+        "yearTo": 2011,
+        "fuel": "디젤",
+        "engine": "R엔진 디젤",
+        "transmission": "세부 검증 중",
+        "drivetrain": "2WD/4WD 구분 필요",
+        "verification": "partial",
+        "isPrimary": false,
+        "note": "2011 R엔진 리콜 대상군 식별용으로 분리했습니다. 세부 정비 규격은 별도 검증 중입니다."
+      }
     ]
   },
   {
@@ -553,56 +856,96 @@
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "자료 수집 중",
-        "summary": "연식·트림별 와이퍼 규격을 공식 부품 정보와 함께 정리합니다."
+        "summary": "연식·트림별 와이퍼 규격을 공식 부품 정보와 함께 정리합니다.",
+        "scopeLabel": "연식·와이퍼 규격별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "캐빈/에어컨 필터",
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "참고 영상 확인",
-        "summary": "TF 계열 해외 Optima 참고영상과 기아 공식 매뉴얼을 함께 확인해 국내 K5 적용 정보를 정리합니다."
+        "summary": "TF 계열 해외 Optima 참고영상과 기아 공식 매뉴얼을 함께 확인해 국내 K5 적용 정보를 정리합니다.",
+        "scopeLabel": "연식·차체 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "엔진 에어필터",
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "참고 영상 확인",
-        "summary": "TF 계열 구조 참고자료를 사용하되 국내 2.0/2.4/LPG 사양별 부품번호는 따로 검증합니다."
+        "summary": "TF 계열 구조 참고자료를 사용하되 국내 2.0/2.4/LPG 사양별 부품번호는 따로 검증합니다.",
+        "scopeLabel": "엔진·흡기 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "일반 외부 전구",
         "category": "전기·조명",
         "safety": "직접 관리 범위",
         "status": "사양 구분 필요",
-        "summary": "램프 옵션과 연식 변경을 확인한 뒤 적용 정보를 표시합니다."
+        "summary": "램프 옵션과 연식 변경을 확인한 뒤 적용 정보를 표시합니다.",
+        "scopeLabel": "램프 옵션·연식별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "엔진오일·필터",
         "category": "소모품",
         "safety": "정비소/장비 권장",
         "status": "파워트레인별 공식 규격 검증 중",
-        "summary": "2.0 가솔린을 시작으로 엔진별 오일 규격과 용량을 분리해 검증합니다."
+        "summary": "2.0 가솔린을 시작으로 엔진별 오일 규격과 용량을 분리해 검증합니다.",
+        "scopeLabel": "엔진·연료별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "냉각수",
         "category": "엔진·냉각",
         "safety": "정비소/장비 권장",
         "status": "공식 규격 검증 중",
-        "summary": "연식·엔진별 냉각계 사양을 공식 자료 중심으로 확인합니다."
+        "summary": "연식·엔진별 냉각계 사양을 공식 자료 중심으로 확인합니다.",
+        "scopeLabel": "엔진·연식별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "미션오일",
         "category": "변속기",
         "safety": "전문 정비 권장",
         "status": "변속기 구분 중",
-        "summary": "변속기 형식별 공식 규격을 확인하고 전문 정비 정보 중심으로 제공합니다."
+        "summary": "변속기 형식별 공식 규격을 확인하고 전문 정비 정보 중심으로 제공합니다.",
+        "scopeLabel": "변속기 코드별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "브레이크/차체자세제어 계통",
         "category": "하체·제동",
         "safety": "전문 정비 권장",
         "status": "리콜 이력 연계",
-        "summary": "브레이크 스위치 리콜 이력과 일반 제동계 점검 정보를 구분해서 제공합니다."
+        "summary": "브레이크 스위치 리콜 이력과 일반 제동계 점검 정보를 구분해서 제공합니다.",
+        "scopeLabel": "생산기간·제동 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       }
     ],
     "sourceLabels": [
@@ -653,6 +996,22 @@
         "publicLinkPolicy": "direct",
         "videoId": "V_Az7CzaXus"
       }
+    ],
+    "variantPolicyNote": "같은 차명·세대라도 연식, 엔진/연료, 변속기, 구동방식에 따라 정비 규격이 달라질 수 있습니다. 현재 선택된 사양에 검증된 정보만 적용하며 다른 사양으로 자동 상속하지 않습니다.",
+    "variants": [
+      {
+        "variantId": "2011-tf-2-0-gasoline",
+        "label": "2011 K5 TF 2.0 가솔린",
+        "yearFrom": 2011,
+        "yearTo": 2011,
+        "fuel": "가솔린",
+        "engine": "2.0 가솔린",
+        "transmission": "세부 변속기 검증 중",
+        "drivetrain": "FWD",
+        "verification": "partial",
+        "isPrimary": true,
+        "note": "2.4 가솔린·LPG·하이브리드와 정비 규격을 섞지 않습니다."
+      }
     ]
   },
   {
@@ -692,63 +1051,108 @@
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "자료 수집 중",
-        "summary": "연식·트림별 규격을 확인해 차량별로 정리합니다."
+        "summary": "연식·트림별 규격을 확인해 차량별로 정리합니다.",
+        "scopeLabel": "연식·와이퍼 규격별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "캐빈/에어컨 필터",
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "국내·해외 참고자료 확인",
-        "summary": "SL 세대의 국내 DIY 사례와 해외 영상을 교차해 구조를 확인하고, 실제 부품 규격은 공식 자료 기준으로 정리합니다."
+        "summary": "SL 세대의 국내 DIY 사례와 해외 영상을 교차해 구조를 확인하고, 실제 부품 규격은 공식 자료 기준으로 정리합니다.",
+        "scopeLabel": "연식·차체 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "엔진 에어필터",
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "사양별 검증 중",
-        "summary": "해외 2.0L 사양의 구조 참고자료는 활용하되 국내 R2.0 디젤의 필터 부품번호는 별도로 확인합니다."
+        "summary": "해외 2.0L 사양의 구조 참고자료는 활용하되 국내 R2.0 디젤의 필터 부품번호는 별도로 확인합니다.",
+        "scopeLabel": "엔진·흡기 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "일반 외부 전구",
         "category": "전기·조명",
         "safety": "직접 관리 범위",
         "status": "사양 구분 필요",
-        "summary": "램프 옵션과 연식 변경을 확인한 뒤 적용 정보를 표시합니다."
+        "summary": "램프 옵션과 연식 변경을 확인한 뒤 적용 정보를 표시합니다.",
+        "scopeLabel": "램프 옵션·연식별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "엔진오일·필터",
         "category": "소모품",
         "safety": "정비소/장비 권장",
         "status": "R2.0 디젤 공식 규격 검증 중",
-        "summary": "엔진별 오일 규격과 용량을 공식 자료로 확인해 제공합니다."
+        "summary": "엔진별 오일 규격과 용량을 공식 자료로 확인해 제공합니다.",
+        "scopeLabel": "엔진·연료별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "냉각수",
         "category": "엔진·냉각",
         "safety": "정비소/장비 권장",
         "status": "공식 규격 검증 중",
-        "summary": "엔진·연식별 냉각계 사양을 공식 자료 중심으로 확인합니다."
+        "summary": "엔진·연식별 냉각계 사양을 공식 자료 중심으로 확인합니다.",
+        "scopeLabel": "엔진·연식별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "미션오일",
         "category": "변속기",
         "safety": "전문 정비 권장",
         "status": "변속기별 검증 중",
-        "summary": "6단 자동·수동 및 구동방식별 차이를 확인하고 전문 정비 정보 중심으로 제공합니다."
+        "summary": "6단 자동·수동 및 구동방식별 차이를 확인하고 전문 정비 정보 중심으로 제공합니다.",
+        "scopeLabel": "변속기 코드별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "브레이크 계통",
         "category": "하체·제동",
         "safety": "전문 정비 권장",
         "status": "안전 우선",
-        "summary": "점검 주기와 이상 증상, 리콜 여부를 중심으로 제공하며 직접 작업 절차는 안내하지 않습니다."
+        "summary": "점검 주기와 이상 증상, 리콜 여부를 중심으로 제공하며 직접 작업 절차는 안내하지 않습니다.",
+        "scopeLabel": "생산기간·제동 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "연료 계통",
         "category": "엔진·연료",
         "safety": "전문 정비 권장",
         "status": "R엔진 리콜 이력 연계",
-        "summary": "2011년 생산 일부 R엔진 차량의 연료공급호스 리콜 대상 여부 확인을 우선합니다."
+        "summary": "2011년 생산 일부 R엔진 차량의 연료공급호스 리콜 대상 여부 확인을 우선합니다.",
+        "scopeLabel": "엔진·연료계통별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       }
     ],
     "sourceLabels": [
@@ -799,6 +1203,22 @@
         "publicLinkPolicy": "direct",
         "videoId": "hoRFpMcjI2Y"
       }
+    ],
+    "variantPolicyNote": "같은 차명·세대라도 연식, 엔진/연료, 변속기, 구동방식에 따라 정비 규격이 달라질 수 있습니다. 현재 선택된 사양에 검증된 정보만 적용하며 다른 사양으로 자동 상속하지 않습니다.",
+    "variants": [
+      {
+        "variantId": "2011-sl-r2-0-diesel-2wd-auto",
+        "label": "2011 스포티지 R R2.0 디젤 2WD 자동",
+        "yearFrom": 2011,
+        "yearTo": 2011,
+        "fuel": "디젤",
+        "engine": "R2.0 E-VGT",
+        "transmission": "6단 자동",
+        "drivetrain": "2WD(FWD)",
+        "verification": "partial",
+        "isPrimary": true,
+        "note": "4WD·가솔린 터보·다른 연식은 별도 사양으로 취급합니다."
+      }
     ]
   },
   {
@@ -838,56 +1258,96 @@
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "자료 수집 중",
-        "summary": "연식과 와이퍼 암 사양을 확인해 정확한 규격을 정리합니다."
+        "summary": "연식과 와이퍼 암 사양을 확인해 정확한 규격을 정리합니다.",
+        "scopeLabel": "연식·와이퍼 규격별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "캐빈/에어컨 필터",
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "참고 영상 확인",
-        "summary": "2006–2010 5세대 Sonata 참고영상과 현대 공식 매뉴얼을 교차해 적용 정보를 정리합니다."
+        "summary": "2006–2010 5세대 Sonata 참고영상과 현대 공식 매뉴얼을 교차해 적용 정보를 정리합니다.",
+        "scopeLabel": "연식·차체 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "엔진 에어필터",
         "category": "소모품",
         "safety": "직접 관리 범위",
         "status": "엔진별 검증 중",
-        "summary": "북미 2.4L 영상은 구조 참고로만 사용하고 국내 2.0 N20의 실제 필터 규격은 별도로 검증합니다."
+        "summary": "북미 2.4L 영상은 구조 참고로만 사용하고 국내 2.0 N20의 실제 필터 규격은 별도로 검증합니다.",
+        "scopeLabel": "엔진·흡기 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "일반 외부 전구",
         "category": "전기·조명",
         "safety": "직접 관리 범위",
         "status": "사양 구분 필요",
-        "summary": "램프 옵션과 초기형/트랜스폼 차이를 확인한 뒤 적용 정보를 표시합니다."
+        "summary": "램프 옵션과 초기형/트랜스폼 차이를 확인한 뒤 적용 정보를 표시합니다.",
+        "scopeLabel": "램프 옵션·연식별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "엔진오일·필터",
         "category": "소모품",
         "safety": "정비소/장비 권장",
         "status": "N20 공식 규격 검증 중",
-        "summary": "2.0 가솔린을 우선으로 엔진별 오일 규격과 용량을 공식 자료로 확인합니다."
+        "summary": "2.0 가솔린을 우선으로 엔진별 오일 규격과 용량을 공식 자료로 확인합니다.",
+        "scopeLabel": "엔진·연료별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "냉각수",
         "category": "엔진·냉각",
         "safety": "정비소/장비 권장",
         "status": "공식 규격 검증 중",
-        "summary": "엔진·연식별 냉각계 사양을 공식 자료 중심으로 확인합니다."
+        "summary": "엔진·연식별 냉각계 사양을 공식 자료 중심으로 확인합니다.",
+        "scopeLabel": "엔진·연식별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "미션오일",
         "category": "변속기",
         "safety": "전문 정비 권장",
         "status": "변속기별 검증 중",
-        "summary": "초기형 4단 자동과 후기형 변속기 사양을 구분하고 전문 정비 정보 중심으로 제공합니다."
+        "summary": "초기형 4단 자동과 후기형 변속기 사양을 구분하고 전문 정비 정보 중심으로 제공합니다.",
+        "scopeLabel": "변속기 코드별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       },
       {
         "name": "브레이크 계통",
         "category": "하체·제동",
         "safety": "전문 정비 권장",
         "status": "후기 생산분 리콜 이력 연계",
-        "summary": "브레이크 스위치 리콜 대상 생산기간과 일반 제동계 점검 정보를 구분해서 제공합니다."
+        "summary": "브레이크 스위치 리콜 대상 생산기간과 일반 제동계 점검 정보를 구분해서 제공합니다.",
+        "scopeLabel": "생산기간·제동 사양별 확인",
+        "applicability": {
+          "mode": "pending",
+          "variantIds": []
+        }
       }
     ],
     "sourceLabels": [
@@ -937,6 +1397,35 @@
         "safetyClass": "owner_simple",
         "publicLinkPolicy": "direct",
         "videoId": "sXhFaMip2LI"
+      }
+    ],
+    "variantPolicyNote": "같은 차명·세대라도 연식, 엔진/연료, 변속기, 구동방식에 따라 정비 규격이 달라질 수 있습니다. 현재 선택된 사양에 검증된 정보만 적용하며 다른 사양으로 자동 상속하지 않습니다.",
+    "variants": [
+      {
+        "variantId": "2007-nf-n20-2-0-gasoline",
+        "label": "2007 NF 쏘나타 N20 2.0 가솔린",
+        "yearFrom": 2007,
+        "yearTo": 2007,
+        "fuel": "가솔린",
+        "engine": "N20 2.0 가솔린",
+        "transmission": "4단 자동",
+        "drivetrain": "FWD",
+        "verification": "partial",
+        "isPrimary": true,
+        "note": "현재 상세 정비 기준 사양입니다."
+      },
+      {
+        "variantId": "2008-2009-nf-transform-pending",
+        "label": "2008–2009 NF 트랜스폼/후기 생산분",
+        "yearFrom": 2008,
+        "yearTo": 2009,
+        "fuel": null,
+        "engine": "엔진 사양별 구분 중",
+        "transmission": "변속기 사양별 구분 중",
+        "drivetrain": "FWD 계열",
+        "verification": "pending",
+        "isPrimary": false,
+        "note": "초기형과 동일 규격으로 가정하지 않으며 후기 생산분 리콜·부품·오일 규격을 별도 검증합니다."
       }
     ]
   }
