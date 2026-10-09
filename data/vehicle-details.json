@@ -654,5 +654,151 @@
         "videoId": "V_Az7CzaXus"
       }
     ]
+  },
+  {
+    "id": "kia-sportage-sl",
+    "title": "기아 스포티지 R (SL)",
+    "focusVariant": "2011 스포티지 R R2.0 디젤 2WD 자동 중심",
+    "production": "2010–2015",
+    "verification": "부분 검증",
+    "identityNotice": "기아 공식 헤리티지에서 Sportage R은 2010년 등장한 SL 계열로 전륜·4륜, 직렬 4기통 가솔린·디젤, 1,995~1,998cc 사양이 확인됩니다. 국내 공식 카탈로그의 R2.0 E-VGT 디젤 184PS 사양을 우선 기준으로 삼되, 4WD·가솔린 터보·연식 변경분은 별도 사양으로 구분합니다.",
+    "specSummary": [
+      "차대/세대: 스포티지 R / SL",
+      "우선 기준: R2.0 E-VGT 디젤",
+      "배기량: 1,995cc",
+      "최고출력: 184PS",
+      "구동: 2WD(FWD) / 4WD 사양 존재",
+      "변속기: 6단 자동·수동 사양 존재"
+    ],
+    "recall": {
+      "status": "R엔진 리콜 1건 우선 확인",
+      "headline": "리콜·무상수리 확인",
+      "summary": "현재 공식 발표에서 구형 스포티지(SL) R엔진 연료공급호스 관련 리콜을 우선 확인했습니다. 스포티지 R 전체가 동일 대상은 아니며 생산기간과 파워트레인을 함께 확인해야 합니다. 실제 차량 대상 여부와 조치 완료 여부는 차량번호 또는 VIN 공식 조회가 최종 기준입니다.",
+      "publicSourceRef": "recall-center",
+      "actionLabel": "공식 차량별 조회 연결 준비 중",
+      "records": [
+        {
+          "title": "R엔진 연료공급호스 관련 리콜",
+          "announced": "2017-06-12",
+          "production": "2011-09-01 ~ 2011-10-31",
+          "summary": "연료공급호스 내구성 저하로 호스 내면 균열과 연료 누유 가능성이 확인된 리콜입니다.",
+          "remedy": "대상 차량의 연료공급호스 교환"
+        }
+      ]
+    },
+    "maintenance": [
+      {
+        "name": "와이퍼",
+        "category": "소모품",
+        "safety": "직접 관리 범위",
+        "status": "자료 수집 중",
+        "summary": "연식·트림별 규격을 확인해 차량별로 정리합니다."
+      },
+      {
+        "name": "캐빈/에어컨 필터",
+        "category": "소모품",
+        "safety": "직접 관리 범위",
+        "status": "국내·해외 참고자료 확인",
+        "summary": "SL 세대의 국내 DIY 사례와 해외 영상을 교차해 구조를 확인하고, 실제 부품 규격은 공식 자료 기준으로 정리합니다."
+      },
+      {
+        "name": "엔진 에어필터",
+        "category": "소모품",
+        "safety": "직접 관리 범위",
+        "status": "사양별 검증 중",
+        "summary": "해외 2.0L 사양의 구조 참고자료는 활용하되 국내 R2.0 디젤의 필터 부품번호는 별도로 확인합니다."
+      },
+      {
+        "name": "일반 외부 전구",
+        "category": "전기·조명",
+        "safety": "직접 관리 범위",
+        "status": "사양 구분 필요",
+        "summary": "램프 옵션과 연식 변경을 확인한 뒤 적용 정보를 표시합니다."
+      },
+      {
+        "name": "엔진오일·필터",
+        "category": "소모품",
+        "safety": "정비소/장비 권장",
+        "status": "R2.0 디젤 공식 규격 검증 중",
+        "summary": "엔진별 오일 규격과 용량을 공식 자료로 확인해 제공합니다."
+      },
+      {
+        "name": "냉각수",
+        "category": "엔진·냉각",
+        "safety": "정비소/장비 권장",
+        "status": "공식 규격 검증 중",
+        "summary": "엔진·연식별 냉각계 사양을 공식 자료 중심으로 확인합니다."
+      },
+      {
+        "name": "미션오일",
+        "category": "변속기",
+        "safety": "전문 정비 권장",
+        "status": "변속기별 검증 중",
+        "summary": "6단 자동·수동 및 구동방식별 차이를 확인하고 전문 정비 정보 중심으로 제공합니다."
+      },
+      {
+        "name": "브레이크 계통",
+        "category": "하체·제동",
+        "safety": "전문 정비 권장",
+        "status": "안전 우선",
+        "summary": "점검 주기와 이상 증상, 리콜 여부를 중심으로 제공하며 직접 작업 절차는 안내하지 않습니다."
+      },
+      {
+        "name": "연료 계통",
+        "category": "엔진·연료",
+        "safety": "전문 정비 권장",
+        "status": "R엔진 리콜 이력 연계",
+        "summary": "2011년 생산 일부 R엔진 차량의 연료공급호스 리콜 대상 여부 확인을 우선합니다."
+      }
+    ],
+    "sourceLabels": [
+      "Kia Heritage Archive",
+      "기아 스포티지 R 공식 카탈로그",
+      "기아 디지털 오너스 매뉴얼",
+      "국토교통부·자동차리콜센터"
+    ],
+    "videoDiscovery": {
+      "status": "국내 영상 추가 수집 중",
+      "sort": "차량 일치도 우선, 이후 조회수·댓글 반응 순",
+      "preferredChannels": [],
+      "groups": [
+        "korea",
+        "overseas"
+      ]
+    },
+    "videos": [
+      {
+        "countryGroup": "overseas",
+        "title": "Kia Sportage SL. How to Cabin Air Filter replacement",
+        "channel": "+ CAR MECHANIC 24 +",
+        "topic": "캐빈/에어컨 필터",
+        "matchLabel": "SL 세대 정확 일치",
+        "summary": "Sportage SL을 명시한 캐빈필터 참고영상입니다. 파워트레인 차이의 영향이 적은 저위험 관리 항목입니다.",
+        "viewCount": 112663,
+        "commentCount": null,
+        "positiveCommentRatio": null,
+        "vehicleMatchScore": 100,
+        "popularityScore": 88,
+        "safetyClass": "owner_simple",
+        "publicLinkPolicy": "direct",
+        "videoId": "yt6YvClgJiM"
+      },
+      {
+        "countryGroup": "overseas",
+        "title": "2011 Kia Sportage Engine Air Filter Replacement PA8152",
+        "channel": "Premium Guard",
+        "topic": "엔진 에어필터",
+        "matchLabel": "2011 SL 해외 2.0L 참고",
+        "summary": "2011 Sportage 2.0L 해외 사양의 엔진 에어필터 구조 참고영상입니다. 국내 R2.0 디젤의 부품 규격은 별도로 확인해야 합니다.",
+        "viewCount": 2229,
+        "commentCount": null,
+        "positiveCommentRatio": null,
+        "vehicleMatchScore": 75,
+        "popularityScore": 38,
+        "safetyClass": "owner_simple",
+        "publicLinkPolicy": "direct",
+        "videoId": "hoRFpMcjI2Y"
+      }
+    ]
   }
 ]
