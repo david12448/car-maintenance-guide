@@ -33,6 +33,13 @@ for d in details:
         assert r["title"]
         assert r["summary"]
         assert r["remedy"]
+    for video in d.get("videos", []):
+        assert video["countryGroup"] in {"korea", "overseas"}
+        assert video["safetyClass"] in {"owner_simple", "shop_assisted", "professional"}
+        assert video["publicLinkPolicy"] in {"direct", "metadata_only", "hide"}
+        if video["publicLinkPolicy"] == "direct":
+            assert video["safetyClass"] == "owner_simple", "direct video links only allowed for owner_simple"
+            assert video.get("videoId"), "direct video link requires videoId"
 
 # Public JSON must not expose private collection infrastructure or direct source URLs.
 for path in DATA.glob("*.json"):

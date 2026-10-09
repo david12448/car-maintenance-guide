@@ -367,5 +367,155 @@
       "자동차리콜센터",
       "공공 자동차 등록·정비 통계"
     ]
+  },
+  {
+    "id": "hyundai-santafe-cm",
+    "title": "현대 싼타페 CM",
+    "focusVariant": "2008 싼타페 CM 2.0 디젤 중심",
+    "production": "2005–2012",
+    "verification": "부분 검증",
+    "identityNotice": "현대 공식 헤리티지 자료의 초기형 CM 2.0 디젤 제원을 기준으로 시작합니다. 연식이 길어지며 엔진·변속기·구동 사양이 달라질 수 있으므로 정비 규격은 차량별 사양 확인 후 확정합니다.",
+    "specSummary": [
+      "초기형 공식 제원: 1,991cc 직렬 4기통 디젤",
+      "초기형 공식 제원: 151PS / 5단 자동 / 전륜구동",
+      "2011 R엔진 리콜 대상군은 초기형과 별도 사양으로 구분"
+    ],
+    "recall": {
+      "status": "공식 리콜 2건 확인",
+      "headline": "리콜·무상수리 확인",
+      "summary": "싼타페 CM은 생산기간과 파워트레인에 따라 리콜 대상이 다릅니다. 초기 생산분 ABS/ESC 모듈 리콜과 2011년 R엔진 연료공급호스 리콜을 각각 분리해 표시하며, 실제 차량 대상 여부와 조치 완료 여부는 차량번호 또는 VIN 공식 조회가 최종 기준입니다.",
+      "publicSourceRef": "recall-center",
+      "actionLabel": "공식 차량별 조회 연결 준비 중",
+      "records": [
+        {
+          "title": "ABS/ESC 모듈 관련 리콜",
+          "announced": "2020-05-19",
+          "production": "2005-03-16 ~ 2009-07-09",
+          "summary": "일부 노후 차량에서 ABS/ESC 모듈 전원부에 이물질이 미세 유입되어 내부 합선과 화재 가능성이 확인된 리콜입니다.",
+          "remedy": "ABS/ESC 모듈 전원공급 제어 스위치 장착"
+        },
+        {
+          "title": "R엔진 연료공급호스 관련 리콜",
+          "announced": "2017-06-12",
+          "production": "2011-09-01 ~ 2011-10-31",
+          "summary": "R엔진 사양 일부 차량의 연료공급호스 내구성 저하로 균열 및 연료 누유 가능성이 확인된 리콜입니다.",
+          "remedy": "대상 차량의 연료공급호스 교환"
+        }
+      ]
+    },
+    "maintenance": [
+      {
+        "name": "와이퍼",
+        "category": "소모품",
+        "safety": "직접 관리 범위",
+        "status": "자료 수집 중",
+        "summary": "연식·트림별 규격을 확인해 차량별로 정리합니다."
+      },
+      {
+        "name": "캐빈/에어컨 필터",
+        "category": "소모품",
+        "safety": "직접 관리 범위",
+        "status": "참고 영상 확인",
+        "summary": "CM 세대 전용 참고영상과 공식 매뉴얼을 함께 확인해 적용 정보를 정리합니다."
+      },
+      {
+        "name": "엔진 에어필터",
+        "category": "소모품",
+        "safety": "직접 관리 범위",
+        "status": "참고 영상 확인",
+        "summary": "엔진 사양별 필터 적용 차이를 확인한 뒤 정확한 부품 정보를 제공합니다."
+      },
+      {
+        "name": "일반 외부 전구",
+        "category": "전기·조명",
+        "safety": "직접 관리 범위",
+        "status": "사양 구분 필요",
+        "summary": "램프 옵션과 연식별 차이를 확인한 뒤 적용 정보를 표시합니다."
+      },
+      {
+        "name": "엔진오일·필터",
+        "category": "소모품",
+        "safety": "정비소/장비 권장",
+        "status": "엔진별 공식 규격 검증 중",
+        "summary": "초기 2.0 디젤과 후기 R엔진을 분리해 오일 규격과 용량을 검증합니다."
+      },
+      {
+        "name": "냉각수",
+        "category": "엔진·냉각",
+        "safety": "정비소/장비 권장",
+        "status": "공식 규격 검증 중",
+        "summary": "파워트레인과 연식별 냉각계 사양을 확인해 제공합니다."
+      },
+      {
+        "name": "미션오일",
+        "category": "변속기",
+        "safety": "전문 정비 권장",
+        "status": "변속기 구분 중",
+        "summary": "변속기 형식별 공식 규격을 확인하고 전문 정비 정보 중심으로 제공합니다."
+      },
+      {
+        "name": "브레이크/ABS 계통",
+        "category": "하체·제동",
+        "safety": "전문 정비 권장",
+        "status": "리콜 이력 연계",
+        "summary": "ABS/ESC 리콜과 일반 제동계 점검 정보를 구분해서 제공합니다."
+      },
+      {
+        "name": "연료 계통",
+        "category": "엔진·연료",
+        "safety": "전문 정비 권장",
+        "status": "R엔진 리콜 이력 연계",
+        "summary": "2011년 R엔진 연료공급호스 리콜 대상 여부 확인을 우선합니다."
+      }
+    ],
+    "sourceLabels": [
+      "현대자동차 공식 헤리티지 제원",
+      "현대자동차 공식 사용설명서",
+      "자동차리콜센터·국토교통부",
+      "공공 자동차 등록·정비 통계"
+    ],
+    "videoDiscovery": {
+      "status": "국내 영상 추가 수집 중",
+      "sort": "차량 일치도 우선, 이후 조회수·댓글 반응 순",
+      "preferredChannels": [],
+      "groups": [
+        "korea",
+        "overseas"
+      ]
+    },
+    "videos": [
+      {
+        "countryGroup": "overseas",
+        "title": "How to change Air Filter on HYUNDAI SANTA FÉ CM TUTORIAL | AUTODOC",
+        "channel": "autodoc.co.uk",
+        "topic": "엔진 에어필터",
+        "matchLabel": "CM 세대 일치",
+        "summary": "싼타페 CM 세대의 엔진 에어필터 구조 참고용 영상입니다. 세부 엔진 형식은 별도로 확인해야 합니다.",
+        "viewCount": 5555,
+        "commentCount": null,
+        "positiveCommentRatio": null,
+        "vehicleMatchScore": 100,
+        "popularityScore": 55,
+        "safetyClass": "owner_simple",
+        "publicLinkPolicy": "direct",
+        "videoId": "A_a1o0xrGg8"
+      },
+      {
+        "countryGroup": "overseas",
+        "title": "How to change Pollen Filter on HYUNDAI SANTA FÉ CM TUTORIAL | AUTODOC",
+        "channel": "autodoc.co.uk",
+        "topic": "캐빈/에어컨 필터",
+        "matchLabel": "CM 세대 일치",
+        "summary": "싼타페 CM 캐빈필터 구조 참고용 영상으로, 파워트레인 차이의 영향이 적은 관리 항목입니다.",
+        "viewCount": 4053,
+        "commentCount": null,
+        "positiveCommentRatio": null,
+        "vehicleMatchScore": 100,
+        "popularityScore": 45,
+        "safetyClass": "owner_simple",
+        "publicLinkPolicy": "direct",
+        "videoId": "iTG1PqbZNU8"
+      }
+    ]
   }
 ]
