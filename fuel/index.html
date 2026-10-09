@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="지역별 주유소 위치, 유가, 운영정보와 주유 할인카드를 연결하는 자동차 생활 가이드">
   <title>주유소·유가 가이드</title>
-  <link rel="stylesheet" href="../styles.css?v=20261010a">
+  <link rel="stylesheet" href="../styles.css?v=20261010b">
 </head>
 <body>
   <header class="module-hero">
@@ -17,39 +17,40 @@
     </div>
   </header>
   <main class="wrap module-main">
+    <section class="fuel-search-panel" aria-labelledby="fuelSearchTitle">
+      <div class="section-head">
+        <div><p class="eyebrow">FUEL SEARCH</p><h2 id="fuelSearchTitle">지역별 주유소 찾기</h2></div>
+        <p id="fuelUpdated" class="count"></p>
+      </div>
+      <div class="fuel-filters">
+        <select id="fuelSido" aria-label="시도"><option value="">시·도 전체</option></select>
+        <select id="fuelSigungu" aria-label="시군구"><option value="">시·군·구 전체</option></select>
+        <select id="fuelProduct" aria-label="유종">
+          <option value="B027">휘발유</option><option value="D047">경유</option>
+          <option value="B034">고급휘발유</option><option value="K015">LPG</option>
+        </select>
+        <select id="fuelBrand" aria-label="브랜드"><option value="">브랜드 전체</option></select>
+        <select id="fuelSort" aria-label="정렬"><option value="price">가격 낮은순</option><option value="name">이름순</option></select>
+      </div>
+      <div class="fuel-quick-filters">
+        <label><input id="filterCarWash" type="checkbox"> 세차장</label>
+        <label><input id="filterMaintenance" type="checkbox"> 경정비</label>
+        <label><input id="filterConvenience" type="checkbox"> 편의점</label>
+        <label><input id="filterQuality" type="checkbox"> 품질인증</label>
+      </div>
+      <div id="fuelSummary" class="fuel-summary" aria-live="polite"></div>
+      <div id="fuelResults" class="fuel-results" aria-live="polite"></div>
+    </section>
+
     <section class="module-grid">
-      <article class="module-card">
-        <span class="status-chip">구축 중</span>
-        <h2>지역별 주유소</h2>
-        <p>시·도 → 시·군·구 → 필요시 세부 지역으로 좁혀 주유소를 찾는 구조입니다.</p>
-        <ul class="module-list"><li>가격순</li><li>거리순</li><li>브랜드 필터</li><li>유종 필터</li></ul>
-      </article>
-      <article class="module-card">
-        <span class="status-chip">공식 데이터 연결</span>
-        <h2>현재 유가</h2>
-        <p>오피넷 공식 가격과 가격 기준시각을 함께 표시해 언제 확인된 가격인지 알 수 있게 합니다.</p>
-      </article>
-      <article class="module-card">
-        <span class="status-chip">별도 검증</span>
-        <h2>운영시간·시설</h2>
-        <p>24시간 여부, 세차장, 경정비, 편의점, 셀프 여부 등을 구분합니다. 운영시간은 확인시각과 검증상태를 함께 표시합니다.</p>
-      </article>
-      <article class="module-card">
-        <span class="status-chip">카드 프로젝트 연계</span>
-        <h2>주유 할인카드</h2>
-        <p>주유소 브랜드와 카드 혜택 조건이 일치할 때 리터당 할인·적립과 월 한도를 연결합니다.</p>
-      </article>
+      <article class="module-card"><span class="status-chip">오피넷 공식 데이터</span><h2>가격 + 기준시각</h2><p>가격만 보여주지 않고 해당 가격이 언제 갱신됐는지 기준일·시간을 같이 표시합니다.</p></article>
+      <article class="module-card"><span class="status-chip">별도 검증</span><h2>운영시간</h2><p>오피넷 상세 API만으로 영업 시작·종료시간을 확정하지 않습니다. 별도 출처로 확인된 경우만 운영시간을 표시합니다.</p></article>
+      <article class="module-card"><span class="status-chip">카드 프로젝트 연계</span><h2>주유 할인카드</h2><p>브랜드·유종·전월실적·월 한도가 검증된 혜택만 연결하고, 조건이 명확할 때만 예상 체감가를 계산합니다.</p></article>
     </section>
 
-    <section class="module-note">
-      <h2>예상 체감 주유비</h2>
-      <p>카드의 전월실적·월 한도·브랜드·유종 조건이 모두 검증된 경우에만 현재 유가에서 혜택을 반영한 예상 체감가를 계산합니다. 조건이 불명확하면 단순히 ‘혜택 있음’으로만 표시합니다.</p>
-    </section>
-
-    <section class="safety-note">
-      <h2>데이터 표시 원칙</h2>
-      <p>오피넷 인증키와 원본 수집 경로는 공개 페이지에 넣지 않습니다. 가격은 기준시각을 표시하고, 운영시간은 별도 확인된 정보만 제공합니다.</p>
-    </section>
+    <section class="module-note"><h2>예상 체감 주유비</h2><p>카드 혜택이 연결되면 현재 유가와 혜택을 함께 보여줄 수 있습니다. 아직 카드 조건이나 실제 주유소 가격이 검증되지 않은 경우에는 계산값을 만들지 않습니다.</p></section>
+    <section class="safety-note"><h2>데이터 표시 원칙</h2><p>오피넷 인증키와 원본 수집 경로는 공개 페이지에 넣지 않습니다. 가격은 기준시각을 표시하고, 운영시간은 별도 확인된 정보만 제공합니다.</p></section>
   </main>
+  <script src="./fuel.js?v=20261010b"></script>
 </body>
 </html>

@@ -1,0 +1,8 @@
+{
+  "status": "awaiting_private_feed",
+  "updatedAt": null,
+  "sourceLabel": "한국석유공사 오피넷 공식 유가정보",
+  "priceFreshness": "각 주유소 유종별 기준일·기준시간 표시",
+  "hoursPolicy": "별도 검증된 운영시간만 표시",
+  "cardBenefitStatus": "integration_ready"
+}

@@ -66,3 +66,26 @@ for path in DATA.glob("*.json"):
         assert forbidden not in text, f"{path.name}: forbidden public token {forbidden}"
 
 print(f"OK public vehicles={len(vehicles)} topics={len(topics)} details={len(details)}")
+
+
+# Fuel module public data validation.
+FUEL_DATA = DATA / "fuel"
+fuel_stations = json.loads((FUEL_DATA / "stations.json").read_text(encoding="utf-8"))
+fuel_meta = json.loads((FUEL_DATA / "meta.json").read_text(encoding="utf-8"))
+assert isinstance(fuel_stations, list), "fuel stations must be list"
+assert isinstance(fuel_meta, dict), "fuel meta must be object"
+assert fuel_meta["status"] in {"awaiting_private_feed","active","stale"}
+fuel_station_ids = [x["station_id"] for x in fuel_stations]
+assert len(fuel_station_ids) == len(set(fuel_station_ids)), "duplicate fuel station"
+for station in fuel_stations:
+    assert station["brand_code"] in {"SKE","GSC","HDO","SOL","RTE","RTX","NHO","ETC","E1G","SKG"}
+    assert station["verification"] in {"verified","partial","pending"}
+    assert station["hours"]["status"] in {"verified","partial","unknown"}
+    assert station["region"]["sido"] and station["region"]["sigungu"]
+    for fuel in station["fuels"]:
+        assert fuel["product_code"] in {"B027","D047","B034","C004","K015"}
+        assert type(fuel["price"]) in {int,float} and fuel["price"] >= 0
+for path in FUEL_DATA.glob("*.json"):
+    fuel_text = path.read_text(encoding="utf-8").lower()
+    for forbidden in ("https://","http://",'"certkey"','"api_key"','"source_url"','"endpoint"'):
+        assert forbidden not in fuel_text, f"{path.name}: forbidden fuel token {forbidden}"

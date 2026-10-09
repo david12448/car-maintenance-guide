@@ -17,6 +17,7 @@ jobs:
           node --check app.js
           node --check app-v2.js
           node --check vehicle.js
+          node --check fuel/fuel.js
       - name: Build static vehicle pages
         run: python scripts/build_vehicle_pages.py
       - name: Verify generated pages
@@ -27,3 +28,5 @@ jobs:
           test -f vehicles/bmw-3series-e90/index.html
           test -f fuel/index.html
           test -f purchase/index.html
+          test -f data/fuel/stations.json
+          test -f data/fuel/meta.json
