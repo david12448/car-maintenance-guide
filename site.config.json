@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "public_origin": null,
+  "deployment_status": "not_configured",
+  "canonical_policy": "verified-origin-only",
+  "target_subdomain_label": "auto",
+  "vehicle_canonical_route": "vehicles/{public_vehicle_id}/"
+}
