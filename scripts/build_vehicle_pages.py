@@ -15,7 +15,11 @@ details = json.loads((DATA / "vehicle-details.json").read_text(encoding="utf-8")
 detail_map = {d["id"]: d for d in details}
 
 def absolute_url(path):
-    return SITE_ORIGIN + "/" + path.strip("/")
+    clean = path.strip("/")
+    if not clean:
+        return SITE_ORIGIN + "/"
+    suffix = "/" if path.endswith("/") else ""
+    return SITE_ORIGIN + "/" + clean + suffix
 
 def canonical_path(vehicle):
     return f'maintenance/{vehicle["makerSlug"]}/{vehicle["publicSlug"]}/'

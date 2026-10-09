@@ -39,3 +39,13 @@ A reusable cross-project pattern is emerging:
 - CI route regression validation
 
 This is a candidate for future project-common-rules guidance after the pilot is verified.
+
+
+## 2026-10-10 — Pilot CI correction
+
+- Symptom: first PR #19 route validation failed after page generation.
+- Impact: no deployment or merge occurred; existing public site remained unchanged.
+- Root cause: verified. The canonical URL helper stripped the trailing slash from directory-style URLs, while the documented public URL contract requires stable trailing slashes.
+- Fix: canonical URL generation now preserves the trailing slash for directory routes and preserves a single slash for the site root.
+- Regression test: `validators/validate_routes.py` checks exact canonical strings for all pilot routes, root/fuel/purchase, sitemap membership, and legacy-route exclusion.
+- Prevention: treat trailing-slash policy as part of the public URL contract rather than presentation formatting.
