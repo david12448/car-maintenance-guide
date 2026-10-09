@@ -18,6 +18,7 @@ jobs:
           node --check app-v2.js
           node --check vehicle.js
           node --check fuel/fuel.js
+          node --check purchase/purchase.js
       - name: Build static vehicle pages
         run: python scripts/build_vehicle_pages.py
       - name: Verify generated pages
@@ -30,3 +31,5 @@ jobs:
           test -f purchase/index.html
           test -f data/fuel/stations.json
           test -f data/fuel/meta.json
+          test -f data/purchase/offers.json
+          test -f data/purchase/meta.json

@@ -1,0 +1,8 @@
+{
+  "status": "awaiting_private_feed",
+  "updatedAt": null,
+  "newCarSourceStatus": "manufacturer_official_sources_ready",
+  "usedCarSourceStatus": "car365_reference_ready",
+  "cardIntegrationStatus": "contract_ready",
+  "financeIntegrationStatus": "waiting_for_finance_repository"
+}

@@ -89,3 +89,26 @@ for path in FUEL_DATA.glob("*.json"):
     fuel_text = path.read_text(encoding="utf-8").lower()
     for forbidden in ("https://","http://",'"certkey"','"api_key"','"source_url"','"endpoint"'):
         assert forbidden not in fuel_text, f"{path.name}: forbidden fuel token {forbidden}"
+
+
+# Purchase module public data validation.
+PURCHASE_DATA = DATA / "purchase"
+purchase_offers = json.loads((PURCHASE_DATA / "offers.json").read_text(encoding="utf-8"))
+purchase_meta = json.loads((PURCHASE_DATA / "meta.json").read_text(encoding="utf-8"))
+assert isinstance(purchase_offers, list), "purchase offers must be list"
+assert isinstance(purchase_meta, dict), "purchase meta must be object"
+assert purchase_meta["status"] in {"awaiting_private_feed","active","stale"}
+purchase_ids=[x["offer_id"] for x in purchase_offers]
+assert len(purchase_ids)==len(set(purchase_ids)), "duplicate purchase offer"
+for offer in purchase_offers:
+    assert offer["market"] in {"new","used"}
+    assert offer["price"]["price_type"] in {"manufacturer_msrp","listing_price","reference_market_price"}
+    assert type(offer["price"]["amount_krw"]) is int and offer["price"]["amount_krw"]>=0
+    if offer["market"]=="used":
+        assert offer["price"]["price_type"]!="manufacturer_msrp"
+    if offer["market"]=="new":
+        assert offer["price"]["price_type"]!="reference_market_price"
+for path in PURCHASE_DATA.glob("*.json"):
+    purchase_text=path.read_text(encoding="utf-8").lower()
+    for forbidden in ("https://","http://",'"source_url"','"raw_url"','"collector"','"parser"','"endpoint"'):
+        assert forbidden not in purchase_text, f"{path.name}: forbidden purchase token {forbidden}"

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="신차와 중고차 구매, 카드 할부, 자동차대출, 등록비용을 연결하는 자동차 구매 가이드">
   <title>차량 구매 가이드</title>
-  <link rel="stylesheet" href="../styles.css?v=20261010a">
+  <link rel="stylesheet" href="../styles.css?v=20261010c">
 </head>
 <body>
   <header class="module-hero">
@@ -17,48 +17,52 @@
     </div>
   </header>
   <main class="wrap module-main">
-    <section class="module-grid">
+    <section class="purchase-search-panel">
+      <div class="purchase-tabs" id="purchaseTabs">
+        <button class="tab is-active" data-market="new">신차</button>
+        <button class="tab" data-market="used">중고차</button>
+      </div>
+      <div class="purchase-filters">
+        <select id="purchaseMaker"><option value="">제조사 전체</option></select>
+        <select id="purchaseYear"><option value="">연식 전체</option></select>
+        <select id="purchaseSort">
+          <option value="priceAsc">가격 낮은순</option>
+          <option value="priceDesc">가격 높은순</option>
+          <option value="recent">최근 확인순</option>
+        </select>
+      </div>
+      <div id="purchaseMeta" class="fuel-summary"></div>
+      <div id="purchaseResults" class="purchase-results"></div>
+    </section>
+
+    <section class="purchase-connect-grid">
       <article class="module-card">
-        <span class="status-chip">신차</span>
-        <h2>신차 가격·트림</h2>
-        <p>제조사 공식 가격과 트림·옵션·프로모션을 기본으로 정리하고 등록비용을 별도로 계산합니다.</p>
-      </article>
-      <article class="module-card">
-        <span class="status-chip">중고차</span>
-        <h2>중고차 시세·이력</h2>
-        <p>매물가격과 전월 거래시세를 구분하고, 통합이력·침수·보험사고 이력을 구매 검토 정보와 연결합니다.</p>
-      </article>
-      <article class="module-card">
-        <span class="status-chip">카드 프로젝트 연계</span>
+        <span class="status-chip">카드 프로젝트</span>
         <h2>카드 결제·할부</h2>
-        <p>카드 일시불 캐시백, 일반 신용카드 할부, 카드사 자동차 전용 할부를 서로 다른 상품유형으로 비교합니다.</p>
+        <p>일시불 캐시백, 일반 카드 할부, 카드사 자동차 전용 할부를 각각 분리해 연결합니다.</p>
       </article>
       <article class="module-card">
-        <span class="status-chip">금융 프로젝트 연계 준비</span>
+        <span class="status-chip">금융 프로젝트</span>
         <h2>자동차대출·할부금융</h2>
-        <p>은행 자동차대출, 캐피탈·할부금융, 자동차리스 등을 별도 상품으로 구분합니다. 금융 저장소가 연결되면 검증된 상품만 표시합니다.</p>
+        <p>은행 자동차대출, 캐피탈·할부금융, 리스는 별도 상품으로 구분합니다. 금융 프로젝트가 연결되면 검증된 상품만 표시합니다.</p>
       </article>
       <article class="module-card">
-        <span class="status-chip">비용 계산</span>
-        <h2>등록비용</h2>
-        <p>취득세와 공채 등 등록비용은 지역과 시점에 따라 달라질 수 있어 기준시점과 참고값임을 함께 표시합니다.</p>
-      </article>
-      <article class="module-card">
-        <span class="status-chip">비교 원칙</span>
-        <h2>총 구매비용</h2>
-        <p>월 납입액만 낮은 상품을 추천하지 않고, 선수금·금리·수수료·총 상환액·캐시백·등록비용을 함께 비교합니다.</p>
+        <span class="status-chip">자동차365</span>
+        <h2>등록비용·시세·이력</h2>
+        <p>중고차 시세는 참고 시세로, 등록비용은 예상값으로 표시하고 통합이력·침수·보험사고 정보는 별도 상태로 보여줍니다.</p>
       </article>
     </section>
 
     <section class="module-note">
-      <h2>신차와 중고차를 같은 방식으로 비교하지 않습니다</h2>
-      <p>중고차는 연식·주행거리·사고/침수 이력과 매물가격이 중요하고, 신차는 트림·옵션·제조사 프로모션이 중요합니다. 금융상품도 신차/중고 적용범위를 별도로 확인합니다.</p>
+      <h2>월 납입액만으로 비교하지 않습니다</h2>
+      <p>가능한 경우 차량가격, 선수금, 금리·수수료, 총 상환액, 카드 캐시백, 등록비용을 함께 계산해 예상 총 구매비용을 비교합니다.</p>
     </section>
 
     <section class="safety-note">
-      <h2>금융정보 표시 원칙</h2>
-      <p>금리와 한도는 상품·기간·심사조건에 따라 달라질 수 있으므로 검증일과 적용조건을 함께 표시합니다. 실제 대출상품은 금융 프로젝트의 검증 데이터가 연결된 뒤 공개합니다.</p>
+      <h2>데이터 표시 원칙</h2>
+      <p>검증된 가격·시세·금융정보가 없으면 예시 값을 만들지 않습니다. 중고차 시세와 등록비용은 참고값임을 표시하고, 실제 계약 전에는 각 공식 제공처의 최신 조건을 다시 확인해야 합니다.</p>
     </section>
   </main>
+  <script src="./purchase.js?v=20261010c"></script>
 </body>
 </html>
