@@ -26,6 +26,17 @@ assert len(detail_ids) == len(set(detail_ids)), "duplicate detail id"
 assert set(detail_ids).issubset(set(ids)), "detail vehicle must exist in vehicles.json"
 
 for d in details:
+    variants = d.get("variants", [])
+    assert variants, f'{d["id"]}: variants required'
+    variant_ids = [v["variantId"] for v in variants]
+    assert len(variant_ids) == len(set(variant_ids)), f'{d["id"]}: duplicate variantId'
+    assert sum(1 for v in variants if v.get("isPrimary")) == 1, f'{d["id"]}: exactly one primary variant required'
+    vehicle = next(v for v in vehicles if v["id"] == d["id"])
+    for variant in variants:
+        assert variant["yearFrom"] <= variant["yearTo"]
+        assert vehicle["yearFrom"] <= variant["yearFrom"] <= vehicle["yearTo"]
+        assert vehicle["yearFrom"] <= variant["yearTo"] <= vehicle["yearTo"]
+        assert variant["verification"] in {"verified","partial","pending"}
     recall = d["recall"]
     assert recall["publicSourceRef"]
     assert "http" not in recall["publicSourceRef"].lower()
@@ -33,6 +44,13 @@ for d in details:
         assert r["title"]
         assert r["summary"]
         assert r["remedy"]
+    for item in d.get("maintenance", []):
+        assert item.get("scopeLabel"), f'{d["id"]}: maintenance scopeLabel required'
+        app = item.get("applicability")
+        assert app and app.get("mode") in {"generation_common","variant_specific","pending"}
+        if app["mode"] == "variant_specific":
+            assert app.get("variantIds"), f'{d["id"]}: variant_specific requires variantIds'
+            assert all(x in variant_ids for x in app["variantIds"])
     for video in d.get("videos", []):
         assert video["countryGroup"] in {"korea", "overseas"}
         assert video["safetyClass"] in {"owner_simple", "shop_assisted", "professional"}

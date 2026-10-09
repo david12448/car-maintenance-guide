@@ -55,6 +55,38 @@ def render_recalls(recall):
       </div>
     </section>"""
 
+def render_variants(detail):
+    variants = detail.get("variants", [])
+    if not variants:
+        return ""
+    cards = []
+    for v in variants:
+        status = {"verified":"검증 완료","partial":"부분 검증","pending":"검증 중"}.get(v.get("verification"), "검증 중")
+        primary = '<span class="variant-primary">현재 기준</span>' if v.get("isPrimary") else ""
+        facts = [
+            f'{v.get("yearFrom")}–{v.get("yearTo")}' if v.get("yearFrom") != v.get("yearTo") else str(v.get("yearFrom")),
+            v.get("fuel"),
+            v.get("engine"),
+            v.get("transmission"),
+            v.get("drivetrain"),
+        ]
+        fact_html = "".join(f'<span>{e(x)}</span>' for x in facts if x)
+        cards.append(f"""
+        <article class="variant-card {'is-primary' if v.get('isPrimary') else ''}">
+          <div class="variant-card-head">{primary}<span class="variant-status">{e(status)}</span></div>
+          <h3>{e(v.get("label"))}</h3>
+          <div class="variant-facts">{fact_html}</div>
+          <p>{e(v.get("note"))}</p>
+        </article>""")
+    return f"""
+    <section class="variant-panel">
+      <div class="variant-panel-head">
+        <div><p class="eyebrow">VARIANT CHECK</p><h2>내 차 사양 먼저 확인</h2></div>
+      </div>
+      <p class="variant-warning">{e(detail.get("variantPolicyNote"))}</p>
+      <div class="variant-grid">{''.join(cards)}</div>
+    </section>"""
+
 def render_maintenance(items):
     cards = []
     for item in items or []:
@@ -66,6 +98,7 @@ def render_maintenance(items):
           </div>
           <h3>{e(item.get("name"))}</h3>
           <p>{e(item.get("summary"))}</p>
+          <div class="maintenance-scope">적용범위: {e(item.get("scopeLabel") or "차량 사양 확인 후 적용")}</div>
           <div class="meta">{e(item.get("status"))}</div>
         </article>""")
     return "".join(cards)
@@ -126,7 +159,7 @@ def render_detail(vehicle, detail):
     return {
         "title": detail.get("title"),
         "focus": f'{detail.get("focusVariant")} · {detail.get("production")} · {detail.get("verification")}',
-        "body": identity + render_recalls(detail["recall"]) + f"""
+        "body": render_variants(detail) + identity + render_recalls(detail["recall"]) + f"""
         <section>
           <div class="section-head"><div><p class="eyebrow">MAINTENANCE</p><h2>정비·관리 항목</h2></div></div>
           <div class="maintenance-grid">{render_maintenance(detail.get("maintenance"))}</div>
