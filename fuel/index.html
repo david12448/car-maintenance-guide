@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="지역별 주유소 위치, 유가, 운영정보와 주유 할인카드를 연결하는 자동차 생활 가이드">
   <title>주유소·유가 가이드</title>
-  <link rel="stylesheet" href="../styles.css?v=20261010b">
+  <link rel="stylesheet" href="../styles.css?v=20261010-map1">
 </head>
 <body>
   <header class="module-hero">
@@ -13,44 +13,96 @@
       <a class="back-link" href="../">← 자동차 생활 홈</a>
       <p class="eyebrow">FUEL STATION & PRICE</p>
       <h1>주유소·유가</h1>
-      <p class="hero-copy">지역별 주유소 가격과 운영정보를 확인하고, 검증된 주유 할인카드까지 연결하는 모듈입니다.</p>
+      <p class="hero-copy">지도나 지역 선택으로 주유소를 찾고, 검증된 가격과 주유 할인카드를 연결하는 모듈입니다.</p>
     </div>
   </header>
+
   <main class="wrap module-main">
     <section class="fuel-search-panel" aria-labelledby="fuelSearchTitle">
       <div class="section-head">
-        <div><p class="eyebrow">FUEL SEARCH</p><h2 id="fuelSearchTitle">지역별 주유소 찾기</h2></div>
+        <div><p class="eyebrow">FUEL SEARCH</p><h2 id="fuelSearchTitle">대한민국 지역별 주유소 찾기</h2></div>
         <p id="fuelUpdated" class="count"></p>
       </div>
-      <div class="fuel-filters">
-        <select id="fuelSido" aria-label="시도"><option value="">시·도 전체</option></select>
-        <select id="fuelSigungu" aria-label="시군구"><option value="">시·군·구 전체</option></select>
-        <select id="fuelProduct" aria-label="유종">
-          <option value="B027">휘발유</option><option value="D047">경유</option>
-          <option value="B034">고급휘발유</option><option value="K015">LPG</option>
-        </select>
-        <select id="fuelBrand" aria-label="브랜드"><option value="">브랜드 전체</option></select>
-        <select id="fuelSort" aria-label="정렬"><option value="price">가격 낮은순</option><option value="name">이름순</option></select>
+
+      <div class="fuel-region-layout">
+        <section class="korea-map-panel" aria-labelledby="koreaMapTitle">
+          <div class="korea-map-title">
+            <strong id="koreaMapTitle">지도에서 시·도 선택</strong>
+            <button id="clearMapRegion" type="button">전체 보기</button>
+          </div>
+          <div class="korea-map-canvas" role="group" aria-label="대한민국 시도 선택 지도">
+            <svg class="korea-map-outline" viewBox="0 0 360 520" aria-hidden="true">
+              <path d="M171 24
+                C132 31 114 57 111 92
+                C108 123 88 149 95 180
+                C104 217 91 248 105 279
+                C121 316 111 350 132 382
+                C149 408 177 423 188 453
+                C199 482 230 493 254 474
+                C276 456 272 427 294 407
+                C319 384 316 348 301 323
+                C286 298 300 267 283 239
+                C265 211 272 180 256 150
+                C240 120 245 85 220 55
+                C205 36 190 26 171 24Z"/>
+              <ellipse cx="128" cy="497" rx="44" ry="13"/>
+            </svg>
+            <button class="map-region-button" type="button" data-sido="서울특별시" style="left:31%;top:24%;" aria-pressed="false">서울</button>
+          <button class="map-region-button" type="button" data-sido="부산광역시" style="left:72%;top:84%;" aria-pressed="false">부산</button>
+          <button class="map-region-button" type="button" data-sido="대구광역시" style="left:65%;top:66%;" aria-pressed="false">대구</button>
+          <button class="map-region-button" type="button" data-sido="인천광역시" style="left:20%;top:27%;" aria-pressed="false">인천</button>
+          <button class="map-region-button" type="button" data-sido="대전광역시" style="left:42%;top:52%;" aria-pressed="false">대전</button>
+          <button class="map-region-button" type="button" data-sido="울산광역시" style="left:78%;top:73%;" aria-pressed="false">울산</button>
+          <button class="map-region-button" type="button" data-sido="세종특별자치시" style="left:39%;top:46%;" aria-pressed="false">세종</button>
+          <button class="map-region-button" type="button" data-sido="경기도" style="left:36%;top:31%;" aria-pressed="false">경기</button>
+          <button class="map-region-button" type="button" data-sido="강원특별자치도" style="left:64%;top:19%;" aria-pressed="false">강원</button>
+          <button class="map-region-button" type="button" data-sido="충청북도" style="left:51%;top:42%;" aria-pressed="false">충북</button>
+          <button class="map-region-button" type="button" data-sido="충청남도" style="left:29%;top:43%;" aria-pressed="false">충남</button>
+          <button class="map-region-button" type="button" data-sido="전북특별자치도" style="left:39%;top:63%;" aria-pressed="false">전북</button>
+          <button class="map-region-button" type="button" data-sido="전남광주통합특별시" style="left:31%;top:78%;" aria-pressed="false">전남·광주</button>
+          <button class="map-region-button" type="button" data-sido="경상북도" style="left:67%;top:55%;" aria-pressed="false">경북</button>
+          <button class="map-region-button" type="button" data-sido="경상남도" style="left:58%;top:78%;" aria-pressed="false">경남</button>
+          <button class="map-region-button" type="button" data-sido="제주특별자치도" style="left:31%;top:94%;" aria-pressed="false">제주</button>
+          </div>
+          <p class="map-note">지역 선택용 개략도입니다. 실제 행정경계 축척 지도는 아닙니다.</p>
+        </section>
+
+        <section class="fuel-region-controls" aria-label="지역과 유종 필터">
+          <div class="fuel-filters">
+            <label><span>시·도</span><select id="fuelSido" aria-label="시도"><option value="">시·도 전체</option></select></label>
+            <label><span>시·군·구</span><select id="fuelSigungu" aria-label="시군구"><option value="">시·군·구 전체</option></select></label>
+            <label><span>유종</span><select id="fuelProduct" aria-label="유종">
+              <option value="B027">휘발유</option><option value="D047">경유</option>
+              <option value="B034">고급휘발유</option><option value="K015">LPG</option>
+            </select></label>
+            <label><span>브랜드</span><select id="fuelBrand" aria-label="브랜드"><option value="">브랜드 전체</option></select></label>
+            <label><span>정렬</span><select id="fuelSort" aria-label="정렬"><option value="price">가격 낮은순</option><option value="name">이름순</option></select></label>
+          </div>
+
+          <div id="regionSelectionStatus" class="region-selection-status">전국을 보고 있습니다.</div>
+
+          <div class="fuel-quick-filters">
+            <label><input id="filterCarWash" type="checkbox"> 세차장</label>
+            <label><input id="filterMaintenance" type="checkbox"> 경정비</label>
+            <label><input id="filterConvenience" type="checkbox"> 편의점</label>
+            <label><input id="filterQuality" type="checkbox"> 품질인증</label>
+          </div>
+        </section>
       </div>
-      <div class="fuel-quick-filters">
-        <label><input id="filterCarWash" type="checkbox"> 세차장</label>
-        <label><input id="filterMaintenance" type="checkbox"> 경정비</label>
-        <label><input id="filterConvenience" type="checkbox"> 편의점</label>
-        <label><input id="filterQuality" type="checkbox"> 품질인증</label>
-      </div>
+
       <div id="fuelSummary" class="fuel-summary" aria-live="polite"></div>
       <div id="fuelResults" class="fuel-results" aria-live="polite"></div>
     </section>
 
     <section class="module-grid">
-      <article class="module-card"><span class="status-chip">오피넷 공식 데이터</span><h2>가격 + 기준시각</h2><p>가격만 보여주지 않고 해당 가격이 언제 갱신됐는지 기준일·시간을 같이 표시합니다.</p></article>
-      <article class="module-card"><span class="status-chip">별도 검증</span><h2>운영시간</h2><p>오피넷 상세 API만으로 영업 시작·종료시간을 확정하지 않습니다. 별도 출처로 확인된 경우만 운영시간을 표시합니다.</p></article>
-      <article class="module-card"><span class="status-chip">카드 프로젝트 연계</span><h2>주유 할인카드</h2><p>브랜드·유종·전월실적·월 한도가 검증된 혜택만 연결하고, 조건이 명확할 때만 예상 체감가를 계산합니다.</p></article>
+      <article class="module-card"><span class="status-chip">지역 선택 상시 제공</span><h2>가격과 분리된 행정구역</h2><p>주유소 데이터가 아직 없어도 지도와 시·도·시군구 선택은 사용할 수 있습니다.</p></article>
+      <article class="module-card"><span class="status-chip">오피넷 공식 데이터</span><h2>가격 + 기준시각</h2><p>실제 가격이 연결되면 가격과 갱신 기준일·시간을 함께 표시합니다.</p></article>
+      <article class="module-card"><span class="status-chip">카드 프로젝트 연계</span><h2>주유 할인카드</h2><p>브랜드·유종·전월실적·월 한도가 검증된 혜택만 연결합니다.</p></article>
     </section>
 
-    <section class="module-note"><h2>예상 체감 주유비</h2><p>카드 혜택이 연결되면 현재 유가와 혜택을 함께 보여줄 수 있습니다. 아직 카드 조건이나 실제 주유소 가격이 검증되지 않은 경우에는 계산값을 만들지 않습니다.</p></section>
-    <section class="safety-note"><h2>데이터 표시 원칙</h2><p>오피넷 인증키와 원본 수집 경로는 공개 페이지에 넣지 않습니다. 가격은 기준시각을 표시하고, 운영시간은 별도 확인된 정보만 제공합니다.</p></section>
+    <section class="module-note"><h2>현재 가격이 아직 안 보이는 이유</h2><p>화면 문제는 아닙니다. 현재 Public 가격 데이터가 아직 비어 있어 실제 금액을 임의로 만들지 않고 있습니다. 오피넷 인증키가 Private 수집 환경에 연결되면 선택한 지역의 검증된 가격을 표시합니다.</p></section>
+    <section class="safety-note"><h2>데이터 표시 원칙</h2><p>가격은 기준시각을 표시하고, 운영시간은 별도 확인된 정보만 제공합니다. 행정구역 레지스트리는 가격 데이터와 별도로 유지해 지역 선택이 항상 동작하도록 합니다.</p></section>
   </main>
-  <script src="./fuel.js?v=20261010b"></script>
+  <script src="./fuel.js?v=20261010-map1"></script>
 </body>
 </html>

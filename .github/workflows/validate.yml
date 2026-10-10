@@ -31,5 +31,6 @@ jobs:
           test -f purchase/index.html
           test -f data/fuel/stations.json
           test -f data/fuel/meta.json
+          test -f data/fuel/regions.json
           test -f data/purchase/offers.json
           test -f data/purchase/meta.json
