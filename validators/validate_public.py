@@ -112,3 +112,19 @@ for path in PURCHASE_DATA.glob("*.json"):
     purchase_text=path.read_text(encoding="utf-8").lower()
     for forbidden in ("https://","http://",'"source_url"','"raw_url"','"collector"','"parser"','"endpoint"'):
         assert forbidden not in purchase_text, f"{path.name}: forbidden purchase token {forbidden}"
+
+
+# Fuel region registry validation.
+fuel_regions = json.loads((FUEL_DATA / "regions.json").read_text(encoding="utf-8"))
+assert isinstance(fuel_regions, list) and len(fuel_regions) == 16, "current top-level region registry must contain 16 entries"
+region_names=[r["name"] for r in fuel_regions]
+assert len(region_names)==len(set(region_names)), "duplicate fuel region"
+assert "전남광주통합특별시" in region_names, "current integrated region missing"
+for region in fuel_regions:
+    assert region["name"] and region["short"]
+    assert isinstance(region["aliases"], list)
+    assert isinstance(region["sigungu"], list) and region["sigungu"], f'{region["name"]}: sigungu required'
+    assert len(region["sigungu"])==len(set(region["sigungu"])), f'{region["name"]}: duplicate sigungu'
+region_text=(FUEL_DATA / "regions.json").read_text(encoding="utf-8").lower()
+for forbidden in ("https://","http://",'"source_url"','"endpoint"','"api_key"'):
+    assert forbidden not in region_text, f"regions.json: forbidden token {forbidden}"
